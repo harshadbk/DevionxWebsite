@@ -10,10 +10,11 @@ function App() {
     <>
       <div className='App'>
         {/* <Portfolio/> */}
-        <Portfolio1/>
+        
         <About />
         <Para/>
         <Card/>
+        <Portfolio1/>
       </div>
     </>
   )
