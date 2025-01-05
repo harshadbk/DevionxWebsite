@@ -1,0 +1,122 @@
+.industries-section {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .gradient-text {
+    background: linear-gradient(45deg, #ff6b6b, #f1c40f);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  .section-description {
+    font-size: 1.1rem;
+    color: #777;
+  }
+  
+  .industries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .industry-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .industry-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  
+  .bg-green-100 {
+    background-color: #d4edda;
+  }
+  
+  .bg-blue-100 {
+    background-color: #cce5ff;
+  }
+  
+  .industry-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .industry-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .industry-features {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .industry-feature {
+    font-size: 1rem;
+    color: #444;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .check-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    stroke: #28a745;
+  }
+  
+  .cta-section {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .cta-description {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #218838;
+  }
+  

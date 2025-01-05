@@ -1,0 +1,118 @@
+/* Services.css */
+
+.title {
+    text-align: center; /* Centers the text horizontally */
+    font-size: 3rem;
+    font-weight: bold;
+    color: orange; /* Sets the font color to orange */
+    margin-bottom: 2rem;
+    animation: fadeInDown 1s ease-in-out;
+  }
+  
+.services {
+    padding: 2rem;
+    background: linear-gradient(to bottom, #f9f9f9, #e3f2fd);
+    min-height: 100vh;
+  }
+  
+  .services h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    animation: fadeInDown 1s ease-in-out;
+  }
+  
+  .swiper {
+    padding: 1rem 0;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide div {
+    width: 90%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  .swiper-slide h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #34495e;
+    margin-bottom: 1rem;
+  }
+  
+  .swiper-slide p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+  }
+  
+  .swiper-slide ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .swiper-slide ul li {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #2c3e50;
+  }
+  
+  .swiper-slide ul li::before {
+    content: '✔';
+    color: #2ecc71;
+    margin-right: 0.5rem;
+  }
+  
+  .swiper-slide button {
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .swiper-slide button:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+  }
+  
+  /* Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
