@@ -1,118 +1,219 @@
-/* Services.css */
-
+/* General Title Styling */
 .title {
-    text-align: center; /* Centers the text horizontally */
-    font-size: 3rem;
-    font-weight: bold;
-    color: orange; /* Sets the font color to orange */
-    margin-bottom: 2rem;
-    animation: fadeInDown 1s ease-in-out;
-  }
-  
+  text-align: center; /* Centers the text horizontally */
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #355CEB, #8838EA);
+  -webkit-background-clip: text;
+  color: transparent;/* Sets the font color to orange */
+  margin-bottom: 2rem;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+/* Main Services Section */
 .services {
-    padding: 2rem;
-    background: linear-gradient(to bottom, #f9f9f9, #e3f2fd);
-    min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #f9f9f9, #e3f2fd);
+  min-height: 100vh;
+}
+
+/* Swiper Styling */
+.swiper {
+  padding: 1rem 0;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide div {
+  width: 90%;
+  max-width: 600px;
+  background-color: #fff; /* Default fallback color */
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Slide Header */
+.swiper-slide h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #34495e;
+  margin-bottom: 1rem;
+}
+
+.swiper-slide h2 span {
+  margin-right: 0.5rem;
+  font-size: 2rem;
+}
+
+/* Slide Description */
+.swiper-slide p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+}
+
+/* Feature List Styling */
+.swiper-slide ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.swiper-slide ul li {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.swiper-slide ul li::before {
+  content: "✔";
+  color: #2ecc71;
+  margin-right: 0.5rem;
+}
+
+/* Button Styling */
+.cta-button {
+  background-color: #3498db;
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #2980b9;
+  transform: scale(1.1);
+}
+
+/* Swiper Pagination Styling */
+.swiper-pagination-bullet {
+  background-color: #ccc !important;
+  opacity: 1 !important;
+  width: 12px !important;
+  height: 12px !important;
+  margin: 0 5px !important;
+  transition: transform 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #3498db !important;
+  transform: scale(1.3);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
   }
-  
-  .services h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #2c3e50;
-    margin-bottom: 2rem;
-    animation: fadeInDown 1s ease-in-out;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .swiper {
-    padding: 1rem 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
   }
-  
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .swiper-slide div {
-    width: 90%;
-    max-width: 600px;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    text-align: center;
-    animation: fadeInUp 1s ease-in-out;
-  }
-  
-  .swiper-slide h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    color: #34495e;
-    margin-bottom: 1rem;
-  }
-  
-  .swiper-slide p {
-    font-size: 1rem;
-    color: #7f8c8d;
+}
+
+/* Responsive Design */
+
+/* For tablets and small screens */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
   }
-  
-  .swiper-slide ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+
+  .swiper-slide div {
+    width: 95%;
+    padding: 1.5rem;
   }
-  
+
+  .swiper-slide h2 {
+    font-size: 1.6rem;
+  }
+
+  .swiper-slide h2 span {
+    font-size: 1.8rem;
+  }
+
+  .swiper-slide p {
+    font-size: 0.9rem;
+  }
+
   .swiper-slide ul li {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    color: #2c3e50;
+    font-size: 0.9rem;
   }
-  
-  .swiper-slide ul li::before {
-    content: '✔';
-    color: #2ecc71;
-    margin-right: 0.5rem;
+
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
   }
-  
-  .swiper-slide button {
-    background-color: #3498db;
-    border: none;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 50px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
-  
-  .swiper-slide button:hover {
-    background-color: #2980b9;
-    transform: scale(1.1);
+
+  .swiper-slide div {
+    width: 100%;
+    padding: 1rem;
   }
-  
-  /* Animations */
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+  .swiper-slide h2 {
+    font-size: 1.4rem;
   }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+  .swiper-slide h2 span {
+    font-size: 1.6rem;
   }
-  
+
+  .swiper-slide p {
+    font-size: 0.8rem;
+  }
+
+  .swiper-slide ul li {
+    font-size: 0.8rem;
+  }
+
+  .cta-button {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    transform: scale(1.2);
+  }
+}
+
+

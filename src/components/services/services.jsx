@@ -50,9 +50,9 @@ const Services = () => {
       >
         {services.map((service, index) => (
           <SwiperSlide key={index}>
-            <div>
+            <div style={{ backgroundColor: service.color }}>
               <h2>
-                {service.icon} {service.title}
+                <span>{service.icon}</span> {service.title}
               </h2>
               <p>{service.description}</p>
               <ul>
@@ -60,7 +60,7 @@ const Services = () => {
                   <li key={idx}>{feature}</li>
                 ))}
               </ul>
-              <Button>Learn More</Button>
+              <Button className="cta-button">Learn More</Button>
             </div>
           </SwiperSlide>
         ))}
