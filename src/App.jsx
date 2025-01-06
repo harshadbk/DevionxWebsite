@@ -1,5 +1,6 @@
 import './App.css';
-import Footer from './components/footer/footer.jsx';
+import Footer from './components/footer/Footer.jsx';
+import BlogCards from './components/footer/BlogCards.jsx';
 import Portfolio1 from './components/Portfolio1.jsx';
 import About from './components/About.jsx';
 import Para from './components/para/Para.jsx';
@@ -21,6 +22,7 @@ function App() {
         <Para/>
         <Card/>
         <Portfolio1/>
+        <BlogCards/>
         <Footer/>
       </div>
     </>
