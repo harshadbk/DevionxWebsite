@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import ProjectsIcon from '../assets/Projects.png';
+import ExpertsIcon from '../assets/ExpertsIcon.png';
+import CustomersIcon from '../assets/CustomersIcon.png';
+import SuccessIcons from '../assets/SuccessIcon.png'
 
 const Portfolio1 = () => {
   // State to track the selected category
@@ -350,17 +354,51 @@ const Portfolio1 = () => {
           </div>
 
           {/* <!-- Client Logos --> */}
-          <div class="mt-20">
-            <h3 class="text-center text-xl font-bold mb-12">
+          <div className="mt-20">
+            <h3 className="text-center text-xl font-bold mb-12">
               Trusted by Leading Companies
             </h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-60">
-              <div class="h-12 bg-gray-200 rounded"></div>
-              <div class="h-12 bg-gray-200 rounded"></div>
-              <div class="h-12 bg-gray-200 rounded"></div>
-              <div class="h-12 bg-gray-200 rounded"></div>
-              <div class="h-12 bg-gray-200 rounded"></div>
-              <div class="h-12 bg-gray-200 rounded"></div>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 items-center">
+              {/* <!-- Successful Projects --> */}
+              <div className="text-center bg-white rounded-xl shadow-lg hover:shadow-xl p-6 max-h-[200px]">
+                <img
+                  src={ProjectsIcon}
+                  alt="Projects Icon"
+                  class="mx-auto h-12 mb-4"
+                />
+                <p class="text-3xl font-bold">50<span class="text-blue-600">+</span></p>
+                <p class="text-black">Successful Projects</p>
+              </div>
+              {/* <!-- Software Development Experts --> */}
+              <div class="text-center bg-white rounded-xl shadow-lg hover:shadow-xl p-6 max-h-[200px]">
+                <img
+                  src={ExpertsIcon}
+                  alt="Experts Icon"
+                  class="mx-auto h-12 mb-4"
+                />
+                <p class="text-3xl font-bold">30<span class="text-blue-600">+</span></p>
+                <p class="text-black">Software Development Experts</p>
+              </div>
+              {/* <!-- Loyal Customers --> */}
+              <div class="text-center bg-white rounded-xl shadow-lg hover:shadow-xl p-6 max-h-[200px]">
+                <img
+                  src={CustomersIcon}
+                  alt="Customers Icon"
+                  class="mx-auto h-12 mb-4"
+                />
+                <p class="text-3xl font-bold">50<span class="text-blue-600">+</span></p>
+                <p class="text-black">Loyal Customers</p>
+              </div>
+              {/* <!-- Success Guarantees --> */}
+              <div class="text-center bg-white rounded-xl shadow-lg hover:shadow-xl p-6 max-h-[200px]">
+                <img
+                  src={SuccessIcons}
+                  alt="Guarantees Icon"
+                  class="mx-auto h-12 mb-4"
+                />
+                <p class="text-3xl font-bold">100<span class="text-blue-600">%</span></p>
+                <p class="text-black">Success Guarantees</p>
+              </div>
             </div>
           </div>
         </div>
