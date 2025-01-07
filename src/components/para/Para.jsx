@@ -5,7 +5,6 @@ import { FaCircleCheck } from "react-icons/fa6";
 function Para() {
     return (
         <div className='main'>
-            {/* Our Story Section */}
             <div>
                 <div className='first'>
                     <h2>Our Story</h2>

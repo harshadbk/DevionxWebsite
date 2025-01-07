@@ -1,62 +1,120 @@
-import React, { useState } from 'react'
-import './Navbar.css'
-
+import React, { useState } from 'react';
+import './navbar.css';
+import { Link } from 'react-scroll';
+import Logo from '../../assets/devon.png';
 
 const Navbar = () => {
-    const [isOpen , setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    const navLinks = [
-        { id: 1, name: "Home", href: "/" },
-        { id: 2, name: "Services", href: "/About" },
-        { id: 3, name: "Industries", href: "/industries" },
-        { id: 4, name: "About", href: "/About" },
-        { id: 5, name: "Contact", href: "/contact" },
+  const toggleMenu = () => {
+    setIsOpen((prev) => !prev);
+  };
 
-    ]
-    const btnLink = [
-        { id: 1, btnname: "Get Quote", href: "/reachus" }
-    ]
+  return (
+    <header>
+      <div className="logo">
+        <Link
+          to="land"
+          smooth={true}
+          duration={500}
+          offset={-70}
+          onClick={() => setIsOpen(false)}
+        >
+          <img src={Logo} alt="" />
+        </Link>
+      </div>
+      <nav>
+        <ul className={`navlinks ${isOpen ? 'nav-open' : ''}`}>
+          <div className="nav-items">
+            <li>
+              <Link
+                to="land"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="services"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                onClick={() => setIsOpen(false)}
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="industries"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                onClick={() => setIsOpen(false)}
+              >
+                Industries
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="portfolio1"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                onClick={() => setIsOpen(false)}
+              >
+                Portfolio
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="about"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                onClick={() => setIsOpen(false)}
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="getintouch"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                onClick={() => setIsOpen(false)}
+              >
+                Contact
+              </Link>
+            </li>
+          </div>
+          </ul>
+          </nav>
+          <ul className="quote-btn">
+            <Link
+              to="freequote"
+              smooth={true}
+              duration={500}
+              offset={-70}
+              onClick={() => setIsOpen(false)}
+            >
+              Get Quote
+            </Link>
+          </ul>
+        
 
-    const currentPath = window.location.pathname;
+      <div className="mobile-menu" onClick={toggleMenu}>
+        <div className="box"></div>
+        <div className="box"></div>
+        <div className="box"></div>
+      </div>
+    </header>
+  );
+};
 
-    
-    const toggleMenu = () => {
-        setIsOpen((prev) => !prev);
-    };
-
-    return (
-        <div>
-            <header>
-                <div className="logo" ><a href="/">DevionX</a></div>
-                <nav>
-                    <ul className={`navlinks ${isOpen ? 'nav-open' : ''}`}>
-                        {
-                            navLinks.map((links) => {
-                                return <li key={links.id} className={currentPath === links.href ? "active" : ""}>
-                                    <a href={links.href}>{links.name}</a>
-                                </li>
-                            })
-                        }
-                    </ul>
-                </nav>
-
-                <div className="quote-btn">
-                    {
-                        btnLink.map((btn) => {
-                            return <a href={btn.href}>{btn.btnname}</a>
-                        })
-                    }
-                </div>
-                
-                <div className={`mobile-menu ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-                    <div className="box"></div>
-                    <div className="box"></div>
-                    <div className="box"></div>
-                </div>
-            </header>
-
-        </div>
-    )
-}
-
-export default Navbar
+export default Navbar;

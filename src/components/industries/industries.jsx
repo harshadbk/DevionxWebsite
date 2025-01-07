@@ -1,4 +1,3 @@
-
 import "./industries.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeaf, faHeartbeat, faGraduationCap, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
@@ -8,7 +7,7 @@ export default function Industries() {
     {
       title: "Agriculture",
       description: "Innovative farming solutions for improved crop yield.",
-      color: "#4CAF50", // Green for agriculture
+      color: "#4CAF50",
       icon: faLeaf,
       features: [
         "Smart Irrigation",
@@ -19,7 +18,7 @@ export default function Industries() {
     {
       title: "Healthcare",
       description: "Improving patient care with streamlined workflows.",
-      color: "#2196F3", // Blue for healthcare
+      color: "#2196F3",
       icon: faHeartbeat,
       features: [
         "Telemedicine",
@@ -30,7 +29,7 @@ export default function Industries() {
     {
       title: "Education",
       description: "Advancing education with tech-driven solutions.",
-      color: "#FFC107", // Yellow for education
+      color: "#FFC107",
       icon: faGraduationCap,
       features: [
         "Smart Learning Platforms",
@@ -41,7 +40,7 @@ export default function Industries() {
     {
       title: "E-Commerce",
       description: "Improving online shopping with smart technologies.",
-      color: "#FF5722", // Orange for e-commerce
+      color: "#FF5722",
       icon: faShoppingCart,
       features: [
         "Product Recommendations",

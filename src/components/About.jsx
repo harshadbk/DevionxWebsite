@@ -10,10 +10,7 @@ const About = () => {
         Transforming ideas into innovative digital solutions with cutting-edge technology and <><br/></>expertise.
       </p>
     </div>
-    
     </>
-    
-    
   );
 };
 
