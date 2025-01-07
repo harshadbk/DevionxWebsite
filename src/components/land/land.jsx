@@ -7,6 +7,7 @@ const Home = () => {
       <main>
         <div className="content">
           <h1 className='primary-txt'>Transforming Ideas</h1>
+          <br />
           <h1 className="secondary-txt">Into Digital Reality</h1>
           <p className="info">
             Empowering businesses with cutting-edge software solutions. From web development to AI & ML applications, we bring innovation to life.
@@ -18,24 +19,22 @@ const Home = () => {
         </div>
 
         <div className="dashboard">
-          <div className="card">
-            <div className="box-1">
-              <h1 className='dashboard-heading blue'>200+</h1>
-              <p className='dashboard-para '>Projects Completed</p>
+          <div className="card-container">
+            <div className="card box-1">
+              <h1 className="dashboard-heading blue">200+</h1>
+              <p className="dashboard-para">Projects Completed</p>
             </div>
-            <div className="box-2">
-              <h1 className='dashboard-heading purple'>50+</h1>
-              <p className='dashboard-para'>Happy Clients</p>
+            <div className="card box-2">
+              <h1 className="dashboard-heading purple">50+</h1>
+              <p className="dashboard-para">Happy Clients</p>
             </div>
-          </div>
-          <div className="card">
-            <div className="box-3">
-              <h1 className='dashboard-heading dark-blue'>15+</h1>
-              <p className='dashboard-para'>Expert Teams</p>
+            <div className="card box-3">
+              <h1 className="dashboard-heading dark-blue">15+</h1>
+              <p className="dashboard-para">Expert Teams</p>
             </div>
-            <div className="box-4">
-              <h1 className='dashboard-heading red'>24/7</h1>
-              <p className='dashboard-para'>Support</p>
+            <div className="card box-4">
+              <h1 className="dashboard-heading red">24/7</h1>
+              <p className="dashboard-para">Support</p>
             </div>
           </div>
         </div>
