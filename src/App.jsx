@@ -4,9 +4,7 @@ import BlogCards from './components/footer/BlogCards';
 import Portfolio1 from './components/Portfolio1';
 import Getintouch from './components/getintouch';
 import Freequote from './components/freequote';
-import About from './components/About';
-import Para from './components/para/Para';
-import Card from './components/Card/Card';
+import First from './components/First'
 import Navbar from './components/navbar/navbar';
 import Land from './components/land/land';
 import Services from './components/services/services';
@@ -27,14 +25,9 @@ function App() {
           <Industries />
         </section>
         <section id="about">
-          <About />
+          <First />
         </section>
-        <section id="para">
-          <Para />
-        </section>
-        <section id="card">
-          <Card />
-        </section>
+        
         <section id="portfolio1">
           <Portfolio1 />
         </section>
