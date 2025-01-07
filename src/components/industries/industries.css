@@ -22,7 +22,7 @@
 }
 
 .section-title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #333;
   font-weight: 600;
 }
@@ -43,7 +43,7 @@
 /* Grid for Industries */
 .industries-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   margin-top: 40px;
 }
@@ -72,7 +72,7 @@
   justify-content: center;
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.1);
-  font-size: 32px;  /* Adjusted icon size for better visual impact */
+  font-size: 32px;
   color: #fff;
   margin-bottom: 15px;
 }
@@ -95,30 +95,34 @@
 .industry-features {
   list-style: none;
   padding: 0;
-  margin-top: 10px; /* Adjust spacing between description and features */
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Ensures left alignment within the card */
+  min-height: 120px; /* Ensures uniform height across all cards */
 }
 
 .industry-feature {
-  font-size: 0.95rem; /* Slightly smaller for better alignment */
+  font-size: 0.95rem;
   color: #333;
   display: flex;
   align-items: center;
-  margin-bottom: 6px; /* Reduced space between features */
-  text-align: left; /* Ensures text aligns properly within the feature item */
+  margin-bottom: 8px; /* Adds consistent spacing between features */
+  text-align: left;
+  width: 100%; /* Ensures text spans the width of the card */
 }
 
 .check-icon {
-  flex-shrink: 0; /* Prevents the icon from shrinking */
-  width: 18px; /* Set a fixed size for uniformity */
-  height: 18px; /* Matches the width for a perfect square */
-  margin-right: 10px; /* Adjust spacing between the icon and text */
-  color: #4caf50; /* Green color for the check icon */
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px; /* Space between icon and text */
+  color: #4caf50; /* Icon color */
 }
 
 .industry-feature:last-child {
-  margin-bottom: 0; /* Removes the margin after the last feature */
+  margin-bottom: 0; /* Removes bottom margin for the last feature */
 }
-
 
 /* Call to Action Section */
 .cta-section {
@@ -133,7 +137,7 @@
 }
 
 .cta-button {
-  background-color:blue;
+  background-color: blue;
   color: #fff;
   padding: 12px 25px;
   border: none;
