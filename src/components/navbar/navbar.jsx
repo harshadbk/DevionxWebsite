@@ -13,105 +13,53 @@ const Navbar = () => {
   return (
     <header>
       <div className="logo">
-        <Link
-          to="land"
-          smooth={true}
-          duration={500}
-          offset={-70}
-          onClick={() => setIsOpen(false)}
-        >
-          <img src={Logo} alt="" />
+        <Link to="land" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
+          <img src={Logo} alt="Logo" />
         </Link>
       </div>
       <nav>
         <ul className={`navlinks ${isOpen ? 'nav-open' : ''}`}>
-          <div className="nav-items">
-            <li>
-              <Link
-                to="land"
-                smooth={true}
-                duration={500}
-                offset={-70}
-                onClick={() => setIsOpen(false)}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="services"
-                smooth={true}
-                duration={500}
-                offset={-70}
-                onClick={() => setIsOpen(false)}
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="industries"
-                smooth={true}
-                duration={500}
-                offset={-70}
-                onClick={() => setIsOpen(false)}
-              >
-                Industries
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="portfolio1"
-                smooth={true}
-                duration={500}
-                offset={-70}
-                onClick={() => setIsOpen(false)}
-              >
-                Portfolio
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="about"
-                smooth={true}
-                duration={500}
-                offset={-70}
-                onClick={() => setIsOpen(false)}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="getintouch"
-                smooth={true}
-                duration={500}
-                offset={-70}
-                onClick={() => setIsOpen(false)}
-              >
-                Contact
-              </Link>
-            </li>
-          </div>
-          </ul>
-          </nav>
-          <ul className="quote-btn">
-            <Link
-              to="freequote"
-              smooth={true}
-              duration={500}
-              offset={-70}
-              onClick={() => setIsOpen(false)}
-            >
-              Get Quote
+          <li>
+            <Link to="land" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
+              Home
             </Link>
-          </ul>
-        
-
+          </li>
+          <li>
+            <Link to="services" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link to="industries" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
+              Industries
+            </Link>
+          </li>
+          <li>
+            <Link to="portfolio1" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
+              Portfolio
+            </Link>
+          </li>
+          <li>
+            <Link to="about" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="getintouch" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <ul className="quote-btn">
+        <Link to="freequote" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
+          Get Quote
+        </Link>
+      </ul>
       <div className="mobile-menu" onClick={toggleMenu}>
-        <div className="box"></div>
-        <div className="box"></div>
-        <div className="box"></div>
+        <div className={`box ${isOpen ? 'open' : ''}`}></div>
+        <div className={`box ${isOpen ? 'open' : ''}`}></div>
+        <div className={`box ${isOpen ? 'open' : ''}`}></div>
       </div>
     </header>
   );
