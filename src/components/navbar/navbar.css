@@ -139,7 +139,7 @@ html, body {
     top: 13vh;
     left: 0;
     width: 100%;
-    background-color: black;
+    background-color: white;
     padding: 20px 0;
     text-align: center;
     transition: all 0.3s ease;
@@ -155,7 +155,7 @@ html, body {
   }
 
   .navlinks li a {
-    color: white;
+    color: grey;
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
