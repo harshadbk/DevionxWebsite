@@ -1,12 +1,32 @@
 import React, { useState } from "react";
-import ProjectsIcon from '../assets/Projects.png';
-import ExpertsIcon from '../assets/ExpertsIcon.png';
-import CustomersIcon from '../assets/CustomersIcon.png';
-import SuccessIcons from '../assets/SuccessIcon.png'
 
 const Portfolio1 = () => {
+  // State to track the selected category
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [visibleProjects, setVisibleProjects] = useState(3);
 
+  const techColors = {
+    React: "bg-blue-100 text-blue-600",
+    "Node.js": "bg-green-100 text-green-600",
+    MongoDB: "bg-yellow-100 text-yellow-600",
+    Flutter: "bg-purple-100 text-purple-600",
+    Firebase: "bg-orange-100 text-orange-600",
+    "ML Kit": "bg-pink-100 text-pink-600",
+    Python: "bg-indigo-100 text-indigo-600",
+    TensorFlow: "bg-red-100 text-red-600",
+    "Vue.js": "bg-teal-100 text-teal-600",
+    Angular: "bg-cyan-100 text-cyan-600",
+    Django: "bg-gray-100 text-gray-600",
+    WebRTC: "bg-lime-100 text-lime-600",
+    IoT: "bg-emerald-100 text-emerald-600",
+    MQTT: "bg-amber-100 text-amber-600",
+    "Next.js": "bg-sky-100 text-sky-600",
+    "React Native": "bg-fuchsia-100 text-fuchsia-600",
+    "Spring Boot": "bg-rose-100 text-rose-600",
+    PostgreSQL: "bg-violet-100 text-violet-600",
+  };
+
+  // Portfolio items categorized
   const projects = [
     {
       id: 1,
@@ -24,7 +44,7 @@ const Portfolio1 = () => {
       description:
         "Telemedicine platform with patient management and appointment scheduling.",
       tech: ["Flutter", "Firebase", "ML Kit"],
-      gradient: "bg-gradient-to-br from-green-500 to-blue-500",
+      gradient: "bg-gradient-to-br from-green-500 to-blue-500", // Unique gradient
     },
     {
       id: 3,
@@ -33,7 +53,7 @@ const Portfolio1 = () => {
       description:
         "AI-powered analytics dashboard for real-time business insights.",
       tech: ["Python", "TensorFlow", "Vue.js"],
-      gradient: "bg-gradient-to-br from-purple-500 to-pink-500",
+      gradient: "bg-gradient-to-br from-purple-500 to-pink-500", // Unique gradient
     },
     {
       id: 4,
@@ -42,7 +62,7 @@ const Portfolio1 = () => {
       description:
         "Comprehensive learning management system with video conferencing.",
       tech: ["Angular", "Django", "WebRTC"],
-      gradient: "bg-gradient-to-br from-yellow-500 to-red-500",
+      gradient: "bg-gradient-to-br from-yellow-500 to-red-500", // Unique gradient
     },
     {
       id: 5,
@@ -51,7 +71,7 @@ const Portfolio1 = () => {
       description:
         "Secure mobile banking application with real-time transactions.",
       tech: ["React Native", "Spring Boot", "PostgreSQL"],
-      gradient: "bg-gradient-to-br from-indigo-500 to-blue-500",
+      gradient: "bg-gradient-to-br from-indigo-500 to-blue-500", // Unique gradient
     },
     {
       id: 6,
@@ -69,6 +89,7 @@ const Portfolio1 = () => {
       ? projects
       : projects.filter((project) => project.category === selectedCategory);
 
+  const visibleFilteredProjects = filteredProjects.slice(0, visibleProjects);
   return (
     <>
       <div>
@@ -111,7 +132,7 @@ const Portfolio1 = () => {
 
             {/* Portfolio Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProjects.map((project) => (
+              {visibleFilteredProjects.map((project) => (
                 <div
                   key={project.id}
                   className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
@@ -131,7 +152,9 @@ const Portfolio1 = () => {
                       {project.tech.map((tech, index) => (
                         <span
                           key={index}
-                          className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm"
+                          className={`px-3 py-1 rounded-full text-sm ${
+                            techColors[tech] || "bg-gray-100 text-gray-600"
+                          }`}
                         >
                           {tech}
                         </span>
@@ -143,264 +166,19 @@ const Portfolio1 = () => {
             </div>
 
             {/* Load More Button */}
-            <div className="text-center mt-12">
-              <button className="px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors">
-                Load More Projects
-              </button>
-            </div>
+            {visibleProjects < filteredProjects.length && (
+              <div className="text-center mt-12">
+                <button
+                  onClick={() => setVisibleProjects(visibleProjects + 3)}
+                  className="px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors"
+                >
+                  Load More Projects
+                </button>
+              </div>
+            )}
           </div>
         </section>
       </div>
-
-      {/* Client testimonials */}
-      <section
-        id="Testimonials"
-        class="py-20 bg-gradient-to-b from-white to-blue-50"
-      >
-        <div class="container mx-auto px-4">
-          {/* <!-- Section Header --> */}
-          <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4">
-              <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Client Testimonials
-              </span>
-            </h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-              Hear what our clients have to say about their experience working
-              with DevionX Technologies.
-            </p>
-          </div>
-
-          {/* <!-- Testimonials Grid --> */}
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* <!-- Testimonial 1 --> */}
-            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
-              <div class="flex justify-between items-start mb-6">
-                <div class="flex items-center space-x-4">
-                  <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span class="text-blue-600 font-bold text-xl">JD</span>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">John Doe</h4>
-                    <p class="text-gray-600 text-sm">CEO, Tech Solutions Inc</p>
-                  </div>
-                </div>
-                <div class="text-yellow-400">
-                  <div class="flex space-x-1">
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <p class="text-gray-600 leading-relaxed">
-                "DevionX Technologies delivered an exceptional e-commerce
-                platform that exceeded our expectations. Their expertise in both
-                frontend and backend development is remarkable."
-              </p>
-            </div>
-
-            {/* <!-- Testimonial 2 --> */}
-            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
-              <div class="flex justify-between items-start mb-6">
-                <div class="flex items-center space-x-4">
-                  <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                    <span class="text-purple-600 font-bold text-xl">SJ</span>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Sarah Johnson</h4>
-                    <p class="text-gray-600 text-sm">CTO, Healthcare Plus</p>
-                  </div>
-                </div>
-                <div class="text-yellow-400">
-                  <div class="flex space-x-1">
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <p class="text-gray-600 leading-relaxed">
-                "The AI-powered analytics solution provided by DevionX has
-                transformed our decision-making process. Their team's technical
-                expertise is outstanding."
-              </p>
-            </div>
-
-            {/* <!-- Testimonial 3 --> */}
-            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
-              <div class="flex justify-between items-start mb-6">
-                <div class="flex items-center space-x-4">
-                  <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <span class="text-green-600 font-bold text-xl">MP</span>
-                  </div>
-                  <div>
-                    <h4 class="font-bold">Mike Peterson</h4>
-                    <p class="text-gray-600 text-sm">Founder, EduTech</p>
-                  </div>
-                </div>
-                <div class="text-yellow-400">
-                  <div class="flex space-x-1">
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <p class="text-gray-600 leading-relaxed">
-                "Working with DevionX on our educational platform was a
-                game-changer. Their innovative approach and dedication to
-                quality is unmatched."
-              </p>
-            </div>
-          </div>
-
-          {/* <!-- Client Logos --> */}
-          <div className="mt-20">
-            <h3 className="text-center text-xl font-bold mb-12">
-              Trusted by Leading Companies
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 items-center">
-              {/* <!-- Successful Projects --> */}
-              <div className="text-center bg-white rounded-xl shadow-lg hover:shadow-xl p-6 max-h-[200px]">
-                <img
-                  src={ProjectsIcon}
-                  alt="Projects Icon"
-                  class="mx-auto h-12 mb-4"
-                />
-                <p class="text-3xl font-bold">50<span class="text-blue-600">+</span></p>
-                <p class="text-black">Successful Projects</p>
-              </div>
-              {/* <!-- Software Development Experts --> */}
-              <div class="text-center bg-white rounded-xl shadow-lg hover:shadow-xl p-6 max-h-[200px]">
-                <img
-                  src={ExpertsIcon}
-                  alt="Experts Icon"
-                  class="mx-auto h-12 mb-4"
-                />
-                <p class="text-3xl font-bold">30<span class="text-blue-600">+</span></p>
-                <p class="text-black">Software Development Experts</p>
-              </div>
-              {/* <!-- Loyal Customers --> */}
-              <div class="text-center bg-white rounded-xl shadow-lg hover:shadow-xl p-6 max-h-[200px]">
-                <img
-                  src={CustomersIcon}
-                  alt="Customers Icon"
-                  class="mx-auto h-12 mb-4"
-                />
-                <p class="text-3xl font-bold">50<span class="text-blue-600">+</span></p>
-                <p class="text-black">Loyal Customers</p>
-              </div>
-              {/* <!-- Success Guarantees --> */}
-              <div class="text-center bg-white rounded-xl shadow-lg hover:shadow-xl p-6 max-h-[200px]">
-                <img
-                  src={SuccessIcons}
-                  alt="Guarantees Icon"
-                  class="mx-auto h-12 mb-4"
-                />
-                <p class="text-3xl font-bold">100<span class="text-blue-600">%</span></p>
-                <p class="text-black">Success Guarantees</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 };
