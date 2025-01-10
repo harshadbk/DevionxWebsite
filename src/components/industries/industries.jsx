@@ -7,7 +7,7 @@ export default function Industries() {
     {
       title: "Manufacturing",
       description: "Smart manufacturing solutions and industrial automation systems.",
-      color: "#4CAF50", // Green for manufacturing
+      color: "#4CAF50",
       icon: faLeaf,
       features: [
         "Process Automation",
@@ -18,7 +18,7 @@ export default function Industries() {
     {
       title: "Healthcare",
       description: "Improving patient care with streamlined workflows.",
-      color: "#2196F3", // Blue for healthcare
+      color: "#2196F3",
       icon: faHeartbeat,
       features: [
         "Telemedicine",
@@ -29,7 +29,7 @@ export default function Industries() {
     {
       title: "Education",
       description: "Advancing modern education with innovative tech-driven solutions",
-      color: "#FFC107", // Yellow for education
+      color: "#FFC107",
       icon: faGraduationCap,
       features: [
         "Smart Learning Platforms",
@@ -40,7 +40,7 @@ export default function Industries() {
     {
       title: "E-Commerce",
       description: "Improving online shopping with smart technologies.",
-      color: "#FF5722", // Orange for e-commerce
+      color: "#FF5722",
       icon: faShoppingCart,
       features: [
         "Product Recommendations",
@@ -51,8 +51,8 @@ export default function Industries() {
     {
       title: "Finance & Banking",
       description: "Secure and scalable solutions for financial institutions and banking services.",
-      color: "#673AB7", // Purple for finance
-      icon: faLeaf, // Replace with appropriate icon if available
+      color: "#673AB7",
+      icon: faLeaf,
       features: [
         "Payment Gateway Integration",
         "Banking Software",
@@ -62,8 +62,8 @@ export default function Industries() {
     {
       title: "Real Estate",
       description: "Digital solutions for property management and real estate operations.",
-      color: "#FF9800", // Orange for real estate
-      icon: faLeaf, // Replace with appropriate icon if available
+      color: "#FF9800",
+      icon: faLeaf,
       features: [
         "Property Management",
         "Virtual Tours",
