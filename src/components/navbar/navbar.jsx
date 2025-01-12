@@ -51,12 +51,12 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="about" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
-              About
+              About Us
             </Link>
           </li>
           <li>
             <Link to="getintouch" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
-              Contact
+              Contact Us
             </Link>
           </li>
         </ul>

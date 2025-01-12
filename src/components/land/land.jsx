@@ -1,11 +1,35 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSprings, animated } from 'react-spring';
+import { motion } from 'framer-motion';
 import './land.css';
 
 const Home = () => {
+  const [splitWords, setSplitWords] = useState({ primary: [], secondary: [] });
+
+  useEffect(() => {
+    const primaryText = "Transforming Ideas";
+    const secondaryText = "Into Digital Reality";
+
+    setSplitWords({
+      primary: primaryText.split(' '),
+      secondary: secondaryText.split(' '),
+    });
+  }, []);
+
+  const wordVariant = {
+    hidden: { opacity: 0, y: 20, filter: 'blur(5px)' },
+    visible: (index) => ({
+      opacity: 1,
+      y: 0,
+      filter: 'blur(0px)',
+      transition: { delay: index * 0.5, duration: 1.2, ease: 'easeOut' } 
+    }),
+    hover: { scale: 1.2, filter: 'blur(0px)', transition: { duration: 0.3 } }
+  };
+
   useEffect(() => {
     const ballsContainer = document.createElement('div');
     ballsContainer.className = 'balls-container';
-
     const numBalls = 50;
 
     for (let i = 0; i < numBalls; i++) {
@@ -28,20 +52,51 @@ const Home = () => {
   return (
     <div id="target-section" className="main-container">
       <main>
-        <div className="balls-container"></div>
         <div className="content">
-          <h1 className="primary-txt">Transforming Ideas</h1>
+        <h1 className="primary-txt">
+            {splitWords.primary.map((word, index) => (
+              <motion.span
+                key={index}
+                custom={index}
+                variants={wordVariant}
+                initial="hidden"
+                animate="visible"
+                style={{ marginRight: '10px', display: 'inline-block' }}
+              >
+                {word}
+              </motion.span>
+            ))}
+          </h1>
+
           <br />
-          <h1 className="secondary-txt">Into Digital Reality</h1>
+
+          <h1 className="secondary-txt">
+            {splitWords.secondary.map((word, index) => (
+              <motion.span
+                key={index}
+                custom={index}
+                variants={wordVariant}
+                initial="hidden"
+                animate="visible"
+                style={{ marginRight: '10px', display: 'inline-block' }}
+              >
+                {word}
+              </motion.span>
+            ))}
+          </h1>
+
           <p className="info">
             Empowering businesses with cutting-edge software solutions. From web development to AI & ML applications, we bring innovation to life.
           </p>
+
+          {/* Buttons */}
           <div className="btns">
             <a href="/getmore" className="hover">Get Started</a>
             <a href="/learnmore" className="btn">Learn More</a>
           </div>
         </div>
 
+        {/* Dashboard Cards */}
         <div className="dashboard">
           <div className="card-container">
             <div className="card box-1">
