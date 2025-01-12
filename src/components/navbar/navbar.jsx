@@ -35,8 +35,18 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
+            <Link to="industries" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
+              Products
+            </Link>
+          </li>
+          <li>
             <Link to="portfolio1" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
               Portfolio
+            </Link>
+          </li>
+          <li>
+            <Link to="portfolio1" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
+              Blogs
             </Link>
           </li>
           <li>

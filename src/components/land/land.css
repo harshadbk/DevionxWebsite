@@ -1,77 +1,139 @@
-/* Base Styles */
-main {
+/* Ball Animation */
+@keyframes ballAnimation {
+    0% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    100% {
+      transform: translateY(100vh) translateX(50vw) rotate(360deg);
+    }
+  }
+  
+  /* Main Container for the Target Component */
+  .main-container {
+    position: relative;
     width: 100%;
-    height: 100vh;
-    background-color: #E3ECFE;
+    height: 75vh;
+    overflow: hidden;
+    z-index: 1; /* Content above balloons */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Ball Container for Target Component */
+  .balls-container {
+    position: absolute; /* Absolute to stay within the component */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Behind content */
+  }
+  
+  /* Ball Styling */
+  .ball {
+    position: absolute;
+    border-radius: 50%;
+    animation: ballAnimation linear infinite;
+    opacity: 0.4;
+    z-index: -1;
+    filter: blur(1px);
+  }
+  
+  /* Color Variations */
+  .ball:nth-child(6n+1) {
+    background-color: rgba(255, 0, 0, 0.5);
+    animation-duration: 6s;
+  }
+  
+  .ball:nth-child(6n+2) {
+    background-color: rgba(0, 0, 255, 0.5);
+    animation-duration: 7s;
+  }
+  
+  .ball:nth-child(6n+3) {
+    background-color: rgba(0, 255, 0, 0.5);
+    animation-duration: 5s;
+  }
+  
+  .ball:nth-child(6n+4) {
+    background-color: rgba(255, 255, 0, 0.5);
+    animation-duration: 6.5s;
+  }
+  
+  .ball:nth-child(6n+5) {
+    background-color: rgba(255, 165, 0, 0.5);
+    animation-duration: 5.5s;
+  }
+  
+  .ball:nth-child(6n) {
+    background-color: rgba(128, 0, 128, 0.5);
+    animation-duration: 4.5s;
+  }
+  
+  
+  /* Main Content */
+  main {
+    width: 100%;
+    height: 75vh;
+    /* background-color: #E3ECFE; */
     display: flex;
     justify-content: space-between;
     gap: 40px;
     padding-bottom: 20px;
-}
-
-.content {
+  }
+  
+  .content {
     width: 60%;
     padding: 0 1.5%;
     margin-top: 70px;
-}
-
-.primary-txt {
+  }
+  
+  .primary-txt {
     font-size: 60px;
     font-weight: 600;
     background: linear-gradient(90deg, #355CEB, #8838EA);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
-}
-
-.secondary-txt {
+  }
+  
+  .secondary-txt {
     font-size: 60px;
     font-weight: 600;
     margin-top: -30px;
-}
-
-.info {
+  }
+  
+  .info {
     width: 80%;
     font-size: 19px;
     margin-top: 20px;
     color: #4B5563;
-}
-
-.btns {
+  }
+  
+  .btns {
     margin-top: 25px;
-}
-
-.btns a {
+  }
+  
+  .btns a {
     padding: 13px 27px;
     margin-right: 10px;
     border-radius: 30px;
-    border: none;
-    outline: none;
     background-color: #2563EB;
     font-size: 17px;
     color: #fff;
-    cursor: pointer;
     text-decoration: none;
-}
-
-.btns a:hover {
-    background-color: #2258cb;
-}
-
-.btns .btn {
+  }
+  
+  .btns .btn {
     background-color: transparent;
     border: 2px solid #2563EB;
     color: #2563EB;
-}
-
-.btns .btn:hover {
-    background-color: #ffffff55;
-}
-
-/* Dashboard Component */
-.dashboard {
+  }
+  
+  .dashboard {
     width: 60%;
-    height: 400px;
+    height: 365px;
     margin-right: 50px;
     margin-top: 50px;
     padding: 20px;
@@ -86,9 +148,9 @@ main {
     gap: 20px;
     justify-content: space-between;
 }
-
-.card {
-    flex: 1 1 calc(50% - 20px); /* Two cards per row */
+  
+  .card {
+    flex: 1 1 calc(50% - 20px);
     height: 150px;
     background: linear-gradient(135deg, #f0f0f0, #ffffff);
     border-radius: 15px;
@@ -98,124 +160,65 @@ main {
     align-items: center;
     justify-content: center;
     transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
+  }
+  
+  .card:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.box-1 {
-    background: linear-gradient(135deg, #EFF6FF, #dfefff);
-}
-
-.box-2 {
-    background: linear-gradient(135deg, #FAF5FF, #f0eaff);
-}
-
-.box-3 {
-    background: linear-gradient(135deg, #EEF2FF, #dfe4ff);
-}
-
-.box-4 {
-    background: linear-gradient(135deg, #FDF2F8, #fbe6ee);
-}
-
-.dashboard-heading {
+  }
+  
+  .dashboard-heading {
     font-size: 1.8rem;
     font-weight: bold;
-    margin-bottom: 10px;
-    color: inherit;
-}
-
-.dashboard-para {
+  }
+  
+  .dashboard-para {
     font-size: 1rem;
     color: #6b7280;
-    text-align: center;
-}
-
-.blue {
+  }
+  
+  .blue {
     color: #2563EB;
-}
-
-.purple {
+  }
+  
+  .purple {
     color: #9333EA;
-}
-
-.dark-blue {
+  }
+  
+  .dark-blue {
     color: #4F46E5;
-}
-
-.red {
+  }
+  
+  .red {
     color: #DB2777;
-}
-
-/* Mobile View Adjustments */
-@media screen and (max-width: 768px) {
+  }
+  
+  /* Mobile View */
+  @media screen and (max-width: 768px) {
     main {
-        flex-direction: column;
-        padding-bottom: 40px; /* Add extra bottom padding */
-        gap: 20px;
+      flex-direction: column;
+      gap: 20px;
     }
-
+  
     .content {
-        width: 90%; /* Adjust content width for mobile */
-        margin-top: 20px;
+      width: 90%;
     }
-
+  
     .primary-txt, .secondary-txt {
-        font-size: 40px; /* Adjust font size for mobile */
+      font-size: 40px;
     }
-
-    .info {
-        width: 90%;
-        font-size: 16px; /* Adjust font size */
-    }
-
+  
     .btns a {
-        padding: 10px 20px; /* Adjust button padding */
-        font-size: 14px; /* Adjust button font size */
+      padding: 10px 20px;
     }
-
+  
     .card-container {
-        flex-direction: column; /* Stack the cards vertically on small screens */
-        align-items: center; /* Center cards on small screens */
+      flex-direction: column;
+      align-items: center;
     }
-
-    .card {
-        flex: 1 1 100%; /* Ensure cards take up full width */
-        height: 200px; /* Adjust height for better mobile view */
-    }
-
+  
     .dashboard {
-        width: 90%;
-        margin-right: 0; /* Remove margin for mobile */
-        margin-top: 20px; /* Adjust margin */
-        height: auto; /* Allow height to adjust dynamically */
+      width: 90%;
     }
-}
-
-/* Extra Small Screen Adjustments */
-@media screen and (max-width: 480px) {
-    .primary-txt, .secondary-txt {
-        font-size: 30px; /* Further reduce font size */
-    }
-
-    .info {
-        font-size: 14px; /* Smaller font size */
-    }
-
-    .btns a {
-        padding: 8px 18px; /* Smaller padding */
-        font-size: 12px; /* Smaller font size */
-    }
-
-    .card {
-        height: 180px; /* Adjust card height */
-    }
-
-    .dashboard {
-        width: 95%; /* Maximize dashboard width */
-        margin-top: 15px; /* Adjust margin */
-    }
-}
+  }
+  

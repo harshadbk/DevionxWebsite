@@ -27,7 +27,6 @@ function App() {
         <section id="about">
           <First />
         </section>
-        
         <section id="portfolio1">
           <Portfolio1 />
         </section>

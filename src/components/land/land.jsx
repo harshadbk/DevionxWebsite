@@ -1,20 +1,44 @@
-import React from 'react'
-import './land.css'
+import React, { useEffect } from 'react';
+import './land.css';
 
 const Home = () => {
+  useEffect(() => {
+    const ballsContainer = document.createElement('div');
+    ballsContainer.className = 'balls-container';
+
+    const numBalls = 50;
+
+    for (let i = 0; i < numBalls; i++) {
+      const ball = document.createElement('div');
+      ball.className = 'ball';
+      ball.style.width = `${Math.random() * 40 + 10}px`;
+      ball.style.height = ball.style.width;
+      ball.style.left = `${Math.random() * 100}%`;
+      ball.style.animationDuration = `${Math.random() * 3 + 2}s`;
+      ballsContainer.appendChild(ball);
+    }
+
+    document.getElementById('target-section').appendChild(ballsContainer);
+
+    return () => {
+      document.getElementById('target-section').removeChild(ballsContainer);
+    };
+  }, []);
+
   return (
-    <div>
+    <div id="target-section" className="main-container">
       <main>
+        <div className="balls-container"></div>
         <div className="content">
-          <h1 className='primary-txt'>Transforming Ideas</h1>
+          <h1 className="primary-txt">Transforming Ideas</h1>
           <br />
           <h1 className="secondary-txt">Into Digital Reality</h1>
           <p className="info">
             Empowering businesses with cutting-edge software solutions. From web development to AI & ML applications, we bring innovation to life.
           </p>
           <div className="btns">
-            <a href="/getmore" className='hover'>Get Started</a>
-            <a href="/learnmore" className='btn' >Learn More</a>
+            <a href="/getmore" className="hover">Get Started</a>
+            <a href="/learnmore" className="btn">Learn More</a>
           </div>
         </div>
 
@@ -40,7 +64,7 @@ const Home = () => {
         </div>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
