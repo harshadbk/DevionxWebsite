@@ -122,7 +122,7 @@ export default function Services() {
 
         <div className="cta-section">
           <p className="cta-description">Interested in our services?</p>
-          <button className="cta-button">Contact Us</button>
+          <button className="btn">Contact Us</button>
         </div>
       </div>
     </section>

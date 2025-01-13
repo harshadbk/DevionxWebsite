@@ -9,10 +9,12 @@ import Navbar from './components/navbar/navbar';
 import Land from './components/land/land';
 import Services from './components/services/services';
 import Industries from './components/industries/industries';
+// import SplashCursor from './components/splashcursor/Spashcursor';
 
 function App() {
   return (
     <>
+    {/* <SplashCursor/> */}
       <Navbar />
       <div className="App">
         <section id="land">

@@ -122,7 +122,7 @@ export default function Industries() {
 
         <div className="cta-section">
           <p className="cta-description">Looking for solutions in your industry?</p>
-          <button className="cta-button">Get Custom Solution</button>
+          <button className="btn">Get Custom Solution</button>
         </div>
       </div>
     </section>

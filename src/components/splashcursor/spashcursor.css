@@ -1,0 +1,64 @@
+/* SplashCursor.css */
+
+.splash-cursor {
+    position: absolute;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* Default color */
+    pointer-events: none;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+    z-index: 10000; /* Ensure it is on top of all other content */
+  }
+  
+  .splash-cursor.active {
+    transform: scale(1.5); /* Increased size */
+    opacity: 1;
+  }
+  
+  @keyframes splashAnimation {
+    0% {
+      transform: scale(0);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .splash-cursor.active {
+    animation: splashAnimation 0.6s ease-in-out;
+  }
+  
+  /* Hover color changes */
+  .hover-red:hover .splash-cursor {
+    background-color: rgba(255, 0, 0, 0.7); /* Red */
+  }
+  
+  .hover-green:hover .splash-cursor {
+    background-color: rgba(0, 255, 0, 0.7); /* Green */
+  }
+  
+  .hover-blue:hover .splash-cursor {
+    background-color: rgba(0, 0, 255, 0.7); /* Blue */
+  }
+  
+  .hover-orange:hover .splash-cursor {
+    background-color: rgba(255, 165, 0, 0.7); /* Orange */
+  }
+  
+  .hover-pink:hover .splash-cursor {
+    background-color: rgba(255, 105, 180, 0.7); /* Hot Pink */
+  }
+  
+  .hover-indigo:hover .splash-cursor {
+    background-color: rgba(75, 0, 130, 0.7); /* Indigo */
+  }
+  

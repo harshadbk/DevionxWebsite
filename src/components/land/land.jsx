@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useSprings, animated } from 'react-spring';
 import { motion } from 'framer-motion';
+import CountUp from '../countup';
 import './land.css';
 
 const Home = () => {
@@ -22,7 +22,7 @@ const Home = () => {
       opacity: 1,
       y: 0,
       filter: 'blur(0px)',
-      transition: { delay: index * 2, duration: 3, ease: 'easeOut' } 
+      transition: { delay: index * 0.5, duration: 1, ease: 'easeOut' }
     }),
     hover: { scale: 1.2, filter: 'blur(0px)', transition: { duration: 0.3 } }
   };
@@ -53,7 +53,7 @@ const Home = () => {
     <div id="target-section" className="main-container">
       <main>
         <div className="content">
-        <h1 className="primary-txt">
+          <h1 className="primary-txt">
             {splitWords.primary.map((word, index) => (
               <motion.span
                 key={index}
@@ -92,7 +92,7 @@ const Home = () => {
           {/* Buttons */}
           <div className="btns">
             <a href="/getmore" className="hover">Get Started</a>
-            <a href="/learnmore" className="btn">Learn More</a>
+            <a href="/learnmore" className="btn2">Learn More</a>
           </div>
         </div>
 
@@ -100,19 +100,31 @@ const Home = () => {
         <div className="dashboard">
           <div className="card-container">
             <div className="card box-1">
-              <h1 className="dashboard-heading blue">200+</h1>
+              <h1 className="dashboard-heading blue">
+                <CountUp to={200} from={0} delay={0} duration={2} className="count-up" />
+                +
+              </h1>
               <p className="dashboard-para">Projects Completed</p>
             </div>
             <div className="card box-2">
-              <h1 className="dashboard-heading purple">50+</h1>
+              <h1 className="dashboard-heading purple">
+                <CountUp to={50} from={0} delay={0} duration={2} className="count-up" />
+                +
+              </h1>
               <p className="dashboard-para">Happy Clients</p>
             </div>
             <div className="card box-3">
-              <h1 className="dashboard-heading dark-blue">15+</h1>
+              <h1 className="dashboard-heading dark-blue">
+                <CountUp to={15} from={0} delay={0} duration={2} className="count-up" />
+                +
+              </h1>
               <p className="dashboard-para">Expert Teams</p>
             </div>
             <div className="card box-4">
-              <h1 className="dashboard-heading red">24/7</h1>
+              <h1 className="dashboard-heading red">
+                <CountUp to={24} from={0} delay={0} duration={2} className="count-up" />
+                /7
+              </h1>
               <p className="dashboard-para">Support</p>
             </div>
           </div>

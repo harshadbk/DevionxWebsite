@@ -61,7 +61,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-      <ul className="quote-btn">
+      <ul className="hover">
         <Link to="freequote" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
           Get Quote
         </Link>

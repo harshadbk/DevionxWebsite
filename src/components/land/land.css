@@ -109,25 +109,107 @@
     color: #4B5563;
   }
   
-  .btns {
-    margin-top: 25px;
-  }
-  
-  .btns a {
-    padding: 13px 27px;
-    margin-right: 10px;
-    border-radius: 30px;
-    background-color: #2563EB;
-    font-size: 17px;
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .btns .btn {
-    background-color: transparent;
-    border: 2px solid #2563EB;
-    color: #2563EB;
-  }
+/* Common Button Styles */
+.hover, .btn2 {
+  position: relative;
+  display: inline-block;
+  padding: 12px 30px; /* Reduced padding for smaller width */
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px; /* Reduced font size for balance */
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.3s;
+  border: 2px solid transparent; /* Slightly thinner border */
+  border-radius: 10px; /* Slightly smaller border-radius */
+  margin: 0 15px; /* Space between the two buttons */
+}
+
+
+/* Span for Neon Borders */
+.hover::before, .btn2::before, 
+.hover::after, .btn2::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+/* Neon Glow for 'Get Started' */
+.hover::before {
+    background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #47ff00, #00ffee, #2b65ff, #8000ff, #ff0000);
+    background-size: 400%;
+    filter: blur(8px);
+    opacity: 0;
+    animation: glowing 8s linear infinite;
+}
+
+.hover::after {
+    background-color: blue;
+}
+
+/* Hover Effect for 'Get Started' */
+.hover:hover::before {
+    opacity: 1;
+}
+
+.hover:hover {
+    color: black;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.7), 0 0 40px rgba(0, 255, 255, 0.7);
+    transform: scale(1.05);
+}
+
+/* Neon Glow for 'Learn More' */
+.btn2::before {
+    background: linear-gradient(45deg, #00ffcc, #0099ff, #cc00ff, #ff0077, #00ffcc);
+    background-size: 400%;
+    filter: blur(8px);
+    opacity: 0;
+    animation: glowing 8s linear infinite;
+}
+
+.btn2::after {
+    background-color: blue;
+}
+
+/* Hover Effect for 'Learn More' */
+.btn2:hover::before {
+    opacity: 1;
+}
+
+.btn2:hover {
+    color: black;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 40px rgba(255, 0, 255, 0.7);
+    transform: scale(1.05);
+}
+
+/* Glow Animation */
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* Click Feedback */
+.hover:active, .btn2:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
   
   .dashboard {
     width: 60%;
@@ -243,7 +325,7 @@
       font-size: 40px;
     }
   
-    .btns a {
+    .btn2s a {
       padding: 10px 20px;
     }
   

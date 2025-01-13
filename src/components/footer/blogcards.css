@@ -1,0 +1,69 @@
+/* Neon Button Styling */
+.neon-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: blue;
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 10px #4b0082, 0 0 20px #4b0082, 0 0 40px #4b0082;
+}
+
+/* Glowing Border Effect */
+.neon-button::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(45deg, #ff0000, #ff9900, #33cc33, #00ccff, #9900ff, #ff0066, #ff0000);
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(8px);
+    border-radius: 12px;
+    animation: neon-glow 8s linear infinite;
+}
+
+/* Hover Effect */
+.neon-button:hover {
+    color: #000;
+    background-color: #fff;
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff;
+}
+
+/* Smooth Transition for Hover */
+.neon-button:hover::before {
+    filter: blur(12px);
+}
+
+/* Glowing Animation */
+@keyframes neon-glow {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 400% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* SVG Icon Animation */
+.neon-button svg {
+    transition: transform 0.3s ease-in-out;
+}
+
+.neon-button:hover svg {
+    transform: translateX(5px); /* Arrow slides right on hover */
+}
