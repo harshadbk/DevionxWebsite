@@ -22,7 +22,7 @@ const Home = () => {
       opacity: 1,
       y: 0,
       filter: 'blur(0px)',
-      transition: { delay: index * 0.5, duration: 1.2, ease: 'easeOut' } 
+      transition: { delay: index * 2, duration: 3, ease: 'easeOut' } 
     }),
     hover: { scale: 1.2, filter: 'blur(0px)', transition: { duration: 0.3 } }
   };

@@ -5,10 +5,11 @@
   box-sizing: border-box;
 }
 
-/* Container and Section */
+/* Industries Section */
 .industries-section {
   padding: 40px 0;
-  background-color: #f5f5f5;
+  background-color: #F5FFFA;
+  overflow-x: auto;
 }
 
 .container {
@@ -40,26 +41,51 @@
   line-height: 1.6;
 }
 
-/* Grid for Industries */
-.industries-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 40px;
-}
-
-.industry-card {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
+/* Slider for Industries */
+.slick-slide {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
+/* Industry Card */
+.industry-card {
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+  width: 280px;
+  height: 400px;
+  margin: 20px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.industry-card::before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(53, 92, 235, 0.2), transparent);
+  top: -75%;
+  left: -75%;
+  transform: rotate(45deg);
+  transition: all 0.7s ease;
+}
+
+.industry-card:hover::before {
+  top: 0;
+  left: 0;
+}
+
+/* Hover effect for Industry Card */
 .industry-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 /* Circle Icon */
@@ -75,20 +101,30 @@
   font-size: 32px;
   color: #fff;
   margin-bottom: 15px;
+  transition: transform 0.3s ease;
 }
 
+/* Hover effect for Icon */
+.industry-card:hover .industry-icon {
+  transform: scale(1.1) rotate(15deg);
+}
+
+/* Title */
 .industry-title {
   font-size: 1.3rem;
   font-weight: 600;
   margin: 15px 0 10px;
   color: #333;
+  text-align: center;
 }
 
+/* Description */
 .industry-description {
   font-size: 1rem;
   color: #666;
   margin-bottom: 20px;
   line-height: 1.6;
+  text-align: center;
 }
 
 /* Industry Features */
@@ -98,8 +134,7 @@
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Ensures left alignment within the card */
-  min-height: 120px; /* Ensures uniform height across all cards */
+  align-items: flex-start;
 }
 
 .industry-feature {
@@ -107,21 +142,20 @@
   color: #333;
   display: flex;
   align-items: center;
-  margin-bottom: 8px; /* Adds consistent spacing between features */
+  margin-bottom: 8px;
   text-align: left;
-  width: 100%; /* Ensures text spans the width of the card */
 }
 
 .check-icon {
   flex-shrink: 0;
   width: 18px;
   height: 18px;
-  margin-right: 10px; /* Space between icon and text */
-  color: #4caf50; /* Icon color */
+  margin-right: 10px;
+  color: #4caf50;
 }
 
 .industry-feature:last-child {
-  margin-bottom: 0; /* Removes bottom margin for the last feature */
+  margin-bottom: 0;
 }
 
 /* Call to Action Section */
@@ -147,26 +181,31 @@
   transition: background-color 0.3s ease;
 }
 
+/* Hover effect for CTA Button */
 .cta-button:hover {
   background-color: #ff9800;
 }
 
 /* Responsive Styles */
-@media (max-width: 1200px) {
-  .industries-grid {
-    grid-template-columns: repeat(3, 1fr);
+@media (max-width: 1024px) {
+  .slick-slide {
+    margin-right: 10px;
   }
-}
 
-@media (max-width: 900px) {
-  .industries-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .industry-card {
+    width: 250px;
+    height: 380px;
+    margin: 10px;
+  }
+
+  .industry-title {
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 600px) {
-  .industries-grid {
-    grid-template-columns: 1fr;
+  .industries-section {
+    padding: 20px 0;
   }
 
   .section-title {
@@ -176,5 +215,10 @@
   .cta-button {
     font-size: 1rem;
     padding: 10px 20px;
+  }
+
+  .industry-card {
+    width: 100%;
+    margin: 10px 0;
   }
 }
