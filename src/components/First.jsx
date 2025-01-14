@@ -1,11 +1,12 @@
 import React from 'react';
 import CountUp from '../components/countup';
+import './first.css';
 
 const First = () => {
   return (
     <div>
       <div id="root">
-        <section id="About" className="py-20">
+        <section id="About" className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">
@@ -127,47 +128,47 @@ const First = () => {
               </div>
             </div>
 
-            <div className="mt-20">
-              <h3 className="text-2xl font-bold text-center mb-12">Our Core Values</h3>
-              <div className="grid md:grid-cols-4 gap-8">
-                <div className="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-all transform hover:scale-105">
-                  <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="core-values-container">
+              <h3 className="core-values-title">Our Core Values</h3>
+              <div className="core-values-grid">
+                <div className="core-value-card">
+                  <div className="core-value-icon-container">
+                    <svg className="core-value-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                     </svg>
                   </div>
-                  <h4 className="font-bold mb-2">Integrity</h4>
-                  <p className="text-gray-600">Maintaining highest ethical standards in all our dealings</p>
+                  <h4 className="core-value-title">Integrity</h4>
+                  <p className="core-value-description">Maintaining highest ethical standards in all our dealings</p>
                 </div>
 
-                <div className="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-all transform hover:scale-105">
-                  <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="core-value-card purple">
+                  <div className="core-value-icon-container purple">
+                    <svg className="core-value-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
                   </div>
-                  <h4 className="font-bold mb-2">Innovation</h4>
-                  <p className="text-gray-600">Continuously pushing boundaries with creative solutions</p>
+                  <h4 className="core-value-title">Innovation</h4>
+                  <p className="core-value-description">Continuously pushing boundaries with creative solutions</p>
                 </div>
 
-                <div className="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-all transform hover:scale-105">
-                  <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="core-value-card green">
+                  <div className="core-value-icon-container green">
+                    <svg className="core-value-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857"></path>
                     </svg>
                   </div>
-                  <h4 className="font-bold mb-2">Collaboration</h4>
-                  <p className="text-gray-600">Working together to achieve excellence through teamwork</p>
+                  <h4 className="core-value-title">Collaboration</h4>
+                  <p className="core-value-description">Working together to achieve excellence through teamwork</p>
                 </div>
 
-                <div className="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-all transform hover:scale-105">
-                  <div className="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="core-value-card yellow">
+                  <div className="core-value-icon-container yellow">
+                    <svg className="core-value-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12l-4 4m0 0l-4-4m4 4V4"></path>
                     </svg>
                   </div>
-                  <h4 className="font-bold mb-2">Excellence</h4>
-                  <p className="text-gray-600">Striving for perfection in everything we do</p>
+                  <h4 className="core-value-title">Excellence</h4>
+                  <p className="core-value-description">Striving for perfection in everything we do</p>
                 </div>
               </div>
             </div>

@@ -8,7 +8,6 @@
     }
   }
   
-  /* Main Container for the Target Component */
   .main-container {
     position: relative;
     width: 100%;
@@ -17,6 +16,7 @@
     z-index: 1; /* Content above balloons */
     padding: 20px;
     text-align: center;
+    background: white;
   }
   
   /* Ball Container for Target Component */
@@ -337,5 +337,4 @@
     .dashboard {
       width: 90%;
     }
-  }
-  
+}

@@ -66,7 +66,8 @@ export default function Services() {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    cssEase: "linear",
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 1024,
@@ -88,9 +89,10 @@ export default function Services() {
             Discover how we deliver top-notch solutions tailored to your needs.
           </p>
         </div>
-
+        <div className="service-container">
         <Slider {...settings}>
           {services.map((service, index) => (
+           
             <div key={index} className="service-card">
               <div
                 className="service-icon"
@@ -119,6 +121,7 @@ export default function Services() {
             </div>
           ))}
         </Slider>
+        </div>
 
         <div className="cta-section">
           <p className="cta-description">Interested in our services?</p>

@@ -1,8 +1,25 @@
+/* Hyperspeed Background */
+
 /* Footer Container */
+.footer-wrapper {
+  position: relative;
+  z-index: 1; 
+}
+
+/* Footer Styling */
 .footer-container {
-  background-color: #1a202c; /* Dark background */
-  color: #e2e8f0; /* Light text color */
-  padding: 4rem 0; /* Padding for top and bottom */
+  color: #e2e8f0;
+  padding: 4rem 0;
+}
+
+.hyperspeed-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .footer {
@@ -29,7 +46,7 @@
 }
 
 .footer-description {
-  color: #cbd5e0; /* gray-400 */
+  color: #cbd5e0;
   margin-bottom: 1rem;
 }
 
@@ -39,7 +56,7 @@
 }
 
 .social-icon {
-  color: #cbd5e0; /* gray-400 */
+  color: #cbd5e0;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -65,7 +82,7 @@
 }
 
 .footer-links a {
-  color: #cbd5e0; /* gray-400 */
+  color: #cbd5e0;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -81,15 +98,15 @@
 
 .footer-contact li {
   margin-bottom: 0.5rem;
-  color: #cbd5e0; /* gray-400 */
+  color: #cbd5e0;
 }
 
 .footer-bottom {
-  border-top: 1px solid #4a5568; /* gray-700 */
+  border-top: 1px solid #4a5568;
   padding-top: 2rem;
   text-align: center;
-  font-size: 0.875rem; /* text-sm */
-  color: #cbd5e0; /* gray-400 */
+  font-size: 0.875rem;
+  color: #cbd5e0;
 }
 
 .footer-bottom p {

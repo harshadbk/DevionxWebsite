@@ -47,6 +47,15 @@
 }
 
 /* Industry Card */
+.slick-slide {
+  padding:10px; 
+}
+
+.slick-list {
+  margin: 10px; 
+}
+
+
 .industry-card {
   background-color: #fff;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -54,7 +63,7 @@
   padding: 25px;
   width: 280px;
   height: 400px;
-  margin: 20px;
+  margin: 0px;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
   scroll-snap-align: start;
   display: flex;
@@ -86,6 +95,7 @@
 .industry-card:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 /* Circle Icon */

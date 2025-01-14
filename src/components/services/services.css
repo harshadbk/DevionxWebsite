@@ -41,22 +41,34 @@
   line-height: 1.6;
 }
 
-/* Service Card Container */
-
-
 /* Service Card */
+
+.service-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.slick-slide {
+  padding:10px; /* Adds space between cards */
+}
+
+.slick-list {
+  margin: 10px; /* Adjusts for the padding */
+}
+
 .service-card {
   background-color: #fff;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   padding: 25px;
-  width: 280px;
+  width: 200px;
   height: 400px;
-  margin: 20px;
+  margin: 0px;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px; 
   align-items: center;
   justify-content: space-between;
   position: relative;
@@ -83,6 +95,7 @@
 .service-card:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 .service-icon {
   width: 90px;
@@ -99,6 +112,7 @@
 
 .service-card:hover .service-icon {
   transform: rotate(20deg) scale(1.1);
+  z-index: 1;
 }
 
 .service-title {

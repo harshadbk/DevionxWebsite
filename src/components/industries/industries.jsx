@@ -66,7 +66,8 @@ export default function Industries() {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    cssEase: "linear",
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 1024,
