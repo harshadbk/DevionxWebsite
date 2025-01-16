@@ -1,234 +1,193 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const FreeQuote = () => {
+  const [step, setStep] = useState(1);
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+    services: [],
+    budget: '',
+    timeline: '',
+    description: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    if (type === 'checkbox') {
+      setFormData((prevData) => ({
+        ...prevData,
+        services: checked
+          ? [...prevData.services, value]
+          : prevData.services.filter((service) => service !== value)
+      }));
+    } else {
+      setFormData((prevData) => ({ ...prevData, [name]: value }));
+    }
+  };
+
+  const nextStep = () => setStep(step + 1);
+  const prevStep = () => setStep(step - 1);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form Submitted:', formData);
+  };
+
   return (
-    <div>
-      <div id="root">
-        <section
-          id="Quote"
-          className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50"
-        >
-          <div className="container mx-auto px-4">
-            {/* <!-- Section Header --> */}
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Get a Free Quote
-                </span>
-              </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Tell us about your project requirements and let's start
-                building your digital solution together.
-              </p>
-            </div>
+    <div id="root">
+      <section id="Quote" className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Get a Free Quote
+              </span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Tell us about your project requirements and let's start building your digital solution together.
+            </p>
+          </div>
 
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-                <form className="space-y-8">
-                  {/* <!-- Project Details --> */}
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+              <form onSubmit={handleSubmit} className="space-y-8">
+                {step === 1 && (
                   <div className="space-y-6">
-                    <h3 className="text-2xl font-bold">Project Details</h3>
-
+                    <h3 className="text-2xl font-bold">Personal Details</h3>
                     <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-gray-700 mb-2" htmlFor="name">
-                          Full Name *
-                        </label>
-                        <input
-                          type="text"
-                          id="name"
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
-                          placeholder="John Doe"
-                          required
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-gray-700 mb-2" htmlFor="company">
-                          Company Name
-                        </label>
-                        <input
-                          type="text"
-                          id="company"
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
-                          placeholder="Your Company"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-gray-700 mb-2" htmlFor="email">
-                          Email Address *
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
-                          placeholder="john@example.com"
-                          required
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-gray-700 mb-2" htmlFor="phone">
-                          Phone Number *
-                        </label>
-                        <input
-                          type="tel"
-                          id="phone"
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
-                          placeholder="+1 (555) 000-0000"
-                          required
-                        />
-                      </div>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Full Name *"
+                        className="w-full px-4 py-3 rounded-lg border"
+                        required
+                      />
+                      <input
+                        type="text"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleChange}
+                        placeholder="Company Name"
+                        className="w-full px-4 py-3 rounded-lg border"
+                      />
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="Email Address *"
+                        className="w-full px-4 py-3 rounded-lg border"
+                        required
+                      />
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="Phone Number *"
+                        className="w-full px-4 py-3 rounded-lg border"
+                        required
+                      />
                     </div>
                   </div>
+                )}
 
-                  {/* <!-- Service Selection --> */}
+                {step === 2 && (
                   <div className="space-y-6">
                     <h3 className="text-2xl font-bold">Services Required</h3>
-
                     <div className="grid md:grid-cols-2 gap-4">
-                      <label className="flex items-center p-4 border rounded-lg hover:bg-blue-50 cursor-pointer transition-colors">
-                        <input
-                          type="checkbox"
-                          className="form-checkbox text-blue-600 rounded"
-                        />
-                        <span className="ml-3">Web Development</span>
-                      </label>
-                      <label className="flex items-center p-4 border rounded-lg hover:bg-blue-50 cursor-pointer transition-colors">
-                        <input
-                          type="checkbox"
-                          className="form-checkbox text-blue-600 rounded"
-                        />
-                        <span className="ml-3">Mobile App Development</span>
-                      </label>
-                      <label className="flex items-center p-4 border rounded-lg hover:bg-blue-50 cursor-pointer transition-colors">
-                        <input
-                          type="checkbox"
-                          className="form-checkbox text-blue-600 rounded"
-                        />
-                        <span className="ml-3">AI &amp; ML Solutions</span>
-                      </label>
-                      <label className="flex items-center p-4 border rounded-lg hover:bg-blue-50 cursor-pointer transition-colors">
-                        <input
-                          type="checkbox"
-                          className="form-checkbox text-blue-600 rounded"
-                        />
-                        <span className="ml-3">Cloud Services</span>
-                      </label>
-                      <label className="flex items-center p-4 border rounded-lg hover:bg-blue-50 cursor-pointer transition-colors">
-                        <input
-                          type="checkbox"
-                          className="form-checkbox text-blue-600 rounded"
-                        />
-                        <span className="ml-3">UI/UX Design</span>
-                      </label>
-                      <label className="flex items-center p-4 border rounded-lg hover:bg-blue-50 cursor-pointer transition-colors">
-                        <input
-                          type="checkbox"
-                          className="form-checkbox text-blue-600 rounded"
-                        />
-                        <span className="ml-3">IT Consulting</span>
-                      </label>
+                      {['Web Development', 'Mobile App Development', 'AI & ML Solutions', 'Cloud Services', 'UI/UX Design', 'IT Consulting'].map((service) => (
+                        <label key={service} className="flex items-center p-4 border rounded-lg">
+                          <input
+                            type="checkbox"
+                            value={service}
+                            checked={formData.services.includes(service)}
+                            onChange={handleChange}
+                            className="form-checkbox"
+                          />
+                          <span className="ml-3">{service}</span>
+                        </label>
+                      ))}
                     </div>
                   </div>
+                )}
 
-                  {/* <!-- Project Budget --> */}
+                {step === 3 && (
                   <div className="space-y-6">
                     <h3 className="text-2xl font-bold">Project Budget</h3>
-
-                    <div className="grid md:grid-cols-3 gap-4">
-                      <label className="flex items-center p-4 border rounded-lg hover:bg-blue-50 cursor-pointer transition-colors">
+                    {['$5,000 - $10,000', '$10,000 - $25,000', '$25,000+'].map((budget) => (
+                      <label key={budget} className="flex items-center p-4 border rounded-lg">
                         <input
                           type="radio"
                           name="budget"
-                          className="form-radio text-blue-600"
+                          value={budget}
+                          checked={formData.budget === budget}
+                          onChange={handleChange}
+                          className="form-radio"
                         />
-                        <span className="ml-3">$5,000 - $10,000</span>
+                        <span className="ml-3">{budget}</span>
                       </label>
-                      <label className="flex items-center p-4 border rounded-lg hover:bg-blue-50 cursor-pointer transition-colors">
-                        <input
-                          type="radio"
-                          name="budget"
-                          className="form-radio text-blue-600"
-                        />
-                        <span className="ml-3">$10,000 - $25,000</span>
-                      </label>
-                      <label className="flex items-center p-4 border rounded-lg hover:bg-blue-50 cursor-pointer transition-colors">
-                        <input
-                          type="radio"
-                          name="budget"
-                          className="form-radio text-blue-600"
-                        />
-                        <span className="ml-3">$25,000+</span>
-                      </label>
-                    </div>
+                    ))}
                   </div>
+                )}
 
-                  {/* <!-- Project Timeline --> */}
+                {step === 4 && (
                   <div className="space-y-6">
                     <h3 className="text-2xl font-bold">Project Timeline</h3>
-
-                    <div className="grid md:grid-cols-3 gap-4">
-                      <label className="flex items-center p-4 border rounded-lg hover:bg-blue-50 cursor-pointer transition-colors">
+                    {['1-3 Months', '3-6 Months', '6+ Months'].map((timeline) => (
+                      <label key={timeline} className="flex items-center p-4 border rounded-lg">
                         <input
                           type="radio"
                           name="timeline"
-                          className="form-radio text-blue-600"
+                          value={timeline}
+                          checked={formData.timeline === timeline}
+                          onChange={handleChange}
+                          className="form-radio"
                         />
-                        <span className="ml-3">1-3 Months</span>
+                        <span className="ml-3">{timeline}</span>
                       </label>
-                      <label className="flex items-center p-4 border rounded-lg hover:bg-blue-50 cursor-pointer transition-colors">
-                        <input
-                          type="radio"
-                          name="timeline"
-                          className="form-radio text-blue-600"
-                        />
-                        <span className="ml-3">3-6 Months</span>
-                      </label>
-                      <label className="flex items-center p-4 border rounded-lg hover:bg-blue-50 cursor-pointer transition-colors">
-                        <input
-                          type="radio"
-                          name="timeline"
-                          className="form-radio text-blue-600"
-                        />
-                        <span className="ml-3">6+ Months</span>
-                      </label>
-                    </div>
+                    ))}
                   </div>
+                )}
 
-                  {/* <!-- Project Description --> */}
+                {step === 5 && (
                   <div className="space-y-6">
                     <h3 className="text-2xl font-bold">Project Description</h3>
-
-                    <div>
-                      <textarea
-                        rows="6"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
-                        placeholder="Please describe your project requirements, goals, and any specific features you need..."
-                      ></textarea>
-                    </div>
+                    <textarea
+                      name="description"
+                      rows="6"
+                      value={formData.description}
+                      onChange={handleChange}
+                      placeholder="Describe your project requirements..."
+                      className="w-full px-4 py-3 rounded-lg border"
+                    ></textarea>
                   </div>
+                )}
 
-                  {/* <!-- Submit Button --> */}
-                  <div className="pt-6">
-                    <button
-                      type="submit"
-                      className="w-full bg-blue-600 text-white py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors"
-                    >
+                <div className="flex justify-between pt-6">
+                  {step > 1 && (
+                    <button type="button" onClick={prevStep} className="px-6 py-2 bg-gray-300 rounded-lg">
+                      Previous
+                    </button>
+                  )}
+                  {step < 5 ? (
+                    <button type="button" onClick={nextStep} className="px-6 py-2 bg-blue-600 text-white rounded-lg">
+                      Next
+                    </button>
+                  ) : (
+                    <button type="submit" className="px-6 py-2 bg-green-600 text-white rounded-lg">
                       Get Your Free Quote
                     </button>
-                    <p className="text-center text-gray-600 mt-4 text-sm">
-                      * We'll get back to you within 24 hours with a detailed
-                      quote.
-                    </p>
-                  </div>
-                </form>
-              </div>
+                  )}
+                </div>
+              </form>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 };

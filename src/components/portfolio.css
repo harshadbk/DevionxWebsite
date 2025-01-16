@@ -1,0 +1,151 @@
+.mylogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  .mylogo img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+  }
+
+  .custom-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding-top: 150px; /* Equivalent to pt-100 in Tailwind */
+  }
+
+  .testimonial-card {
+    background-color: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .testimonial-card:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .testimonial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+  
+  .testimonial-header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .avatar {
+    width: 3rem;
+    height: 3rem;
+    background-color: #bfdbfe;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .avatar-text {
+    color: #2563eb;
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  .name-header{
+    padding-left: 100px;
+  }
+  
+  .name {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .designation {
+    color: #4b5563;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .rating {
+    color: #fbbf24;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .stars {
+    display: flex;
+    gap: 0.25rem;
+  }
+  
+  .star {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .testimonial-text {
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  
+
+  .project-slider .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .project-slider .group {
+    width: 100%;
+    max-width: 320px;
+    transition: all 0.3s ease;
+  }
+  
+  .project-slider .group:hover {
+    transform: scale(1.05);
+  }
+  
+  .project-slider .mylogo {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 10;
+  }
+  
+  .project-slider .custom-container {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10;
+  }
+  
+  .project-slider .swiper-button-next,
+  .project-slider .swiper-button-prev {
+    color: #000;
+  }
+  
+  .project-slider .swiper-pagination-bullet {
+    background-color: #000;
+  }
+  
+  .project-slider .swiper-pagination-bullet-active {
+    background-color: #2563eb;
+  }
+  
