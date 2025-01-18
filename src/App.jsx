@@ -1,49 +1,54 @@
 import './App.css';
-import Footer from './components/footer/Footer';
-import BlogCards from './components/footer/BlogCards';
-import Portfolio1 from './components/Portfolio1';
-import Getintouch from './components/getintouch';
-import Freequote from './components/freequote';
-import First from './components/First'
+import Homepage from "./components/homepage";
 import Navbar from './components/navbar/navbar';
-import Land from './components/land/land';
+import Footer from './components/footer/Footer';
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import Services from './components/services/services';
 import Industries from './components/industries/industries';
-// import SplashCursor from './components/splashcursor/Spashcursor';
+import Portfolio from './components/Portfolio1';
+import Blogs from './components/footer/BlogCards';
+import About from './components/getintouch';
+import Contact from './components/freequote';
+import GetQuote from './components/getintouch';
+import Faqs from './components/faqs/faqs';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);  // Scroll to top on route change
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
+
   return (
-    <>
-    {/* <SplashCursor/> */}
-      <Navbar />
-      <div className="App">
-        <section id="land">
-          <Land />
-        </section>
-        <section id="services">
-          <Services />
-        </section>
-        <section id="industries">
-          <Industries />
-        </section>
-        <section id="about">
-          <First />
-        </section>
-        <section id="portfolio1">
-          <Portfolio1 />
-        </section>
-        <section id="freequote">
-          <Freequote />
-        </section>
-        <section id="getintouch">
-          <Getintouch />
-        </section>
-        <section id="blog-cards">
-          <BlogCards />
-        </section>
+    <div>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/get-quote" element={<GetQuote />} />
+        </Routes>
+        <Faqs />
         <Footer />
-      </div>
-    </>
+      </BrowserRouter>
+    </div>
   );
 }
 

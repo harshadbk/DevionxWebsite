@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import './navbar.css';
-import { Link } from 'react-scroll';
 import Logo from '../../assets/devon.png';
 
 const Navbar = () => {
@@ -10,66 +10,116 @@ const Navbar = () => {
     setIsOpen((prev) => !prev);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <header>
+    <header className="navbar">
+      {/* Logo */}
       <div className="logo">
-        <Link to="land" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
+        <NavLink to="/demo" onClick={closeMenu}>
           <img src={Logo} alt="Logo" />
-        </Link>
+        </NavLink>
       </div>
+
+      {/* Navigation Links */}
       <nav>
         <ul className={`navlinks ${isOpen ? 'nav-open' : ''}`}>
           <li>
-            <Link to="land" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
-              Home
-            </Link>
+            <NavLink
+              to={"/"}
+              onClick={closeMenu}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
+              <div className="item"><p>Home</p></div>
+            </NavLink>
           </li>
           <li>
-            <Link to="services" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
-              Services
-            </Link>
+            <NavLink
+              to={"/services"}
+              onClick={closeMenu}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
+              <div className="item"><p>Services</p></div>
+            </NavLink>
           </li>
           <li>
-            <Link to="industries" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
-              Industries
-            </Link>
+            <NavLink
+              to="/industries"
+              onClick={closeMenu}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
+              <div className="item"><p>Industries</p></div>
+            </NavLink>
           </li>
           <li>
-            <Link to="industries" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
-              Products
-            </Link>
+            <NavLink
+              to="/products"
+              onClick={closeMenu}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
+              <div className="item"><p>Products</p></div>
+            </NavLink>
           </li>
           <li>
-            <Link to="portfolio1" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
-              Portfolio
-            </Link>
+            <NavLink
+              to="/portfolio"
+              onClick={closeMenu}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
+              <div className="item"><p>Portfolio</p></div>
+            </NavLink>
           </li>
           <li>
-            <Link to="portfolio1" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
-              Blogs
-            </Link>
+            <NavLink
+              to="/blogs"
+              onClick={closeMenu}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
+              <div className="item"><p>Blogs</p></div>
+            </NavLink>
           </li>
           <li>
-            <Link to="about" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
-              About Us
-            </Link>
+            <NavLink
+              to="/about"
+              onClick={closeMenu}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
+              <div className="item"><p>About Us</p></div>
+            </NavLink>
           </li>
           <li>
-            <Link to="getintouch" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
-              Contact Us
-            </Link>
+            <NavLink
+              to="/contact"
+              onClick={closeMenu}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
+              <div className="item"><p>Contact Us</p></div>
+            </NavLink>
           </li>
         </ul>
       </nav>
+
+      {/* Get Quote Button */}
       <ul className="hover">
-        <Link to="freequote" smooth={true} duration={500} offset={-70} onClick={() => setIsOpen(false)}>
+        <NavLink
+          to="/get-quote"
+          onClick={closeMenu}
+          className={({ isActive }) => (isActive ? 'active' : '')}
+        >
           Get Quote
-        </Link>
+        </NavLink>
       </ul>
-      <div className="mobile-menu" onClick={toggleMenu}>
-        <div className={`box ${isOpen ? 'open' : ''}`}></div>
-        <div className={`box ${isOpen ? 'open' : ''}`}></div>
-        <div className={`box ${isOpen ? 'open' : ''}`}></div>
+
+      {/* Mobile Menu Icon */}
+      <div
+        className={`mobile-menu ${isOpen ? 'open' : ''}`}
+        onClick={toggleMenu}
+      >
+        <div className="box"></div>
+        <div className="box"></div>
+        <div className="box"></div>
       </div>
     </header>
   );
