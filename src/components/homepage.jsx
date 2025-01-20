@@ -8,7 +8,7 @@ import Land from './land/land';
 import Services from './services/services';
 import Industries from './industries/industries';
 
-const homepage = () => {
+const Homepage = () => {
     return (
         <div data-aos="fade-up">
             <Land />
@@ -23,4 +23,4 @@ const homepage = () => {
     );
 }
 
-export default homepage
+export default Homepage;

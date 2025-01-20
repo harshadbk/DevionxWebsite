@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink,Link } from 'react-router-dom';
 import './navbar.css';
 import Logo from '../../assets/devon.png';
 
@@ -18,7 +18,7 @@ const Navbar = () => {
     <header className="navbar">
       {/* Logo */}
       <div className="logo">
-        <NavLink to="/demo" onClick={closeMenu}>
+        <NavLink to="/" onClick={closeMenu}>
           <img src={Logo} alt="Logo" />
         </NavLink>
       </div>
@@ -36,80 +36,81 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to={"/services"}
+            <a
+              href="/services"
               onClick={closeMenu}
-              className={({ isActive }) => (isActive ? 'active' : '')}
+              className={`item ${window.location.pathname === "/services" ? "active" : ""}`}
             >
-              <div className="item"><p>Services</p></div>
-            </NavLink>
+              <p>Services</p>
+            </a>
+          </li>
+
+          <li>
+          <a
+              href="/industries"
+              onClick={closeMenu}
+              className={`item ${window.location.pathname === "/industries" ? "active" : ""}`}
+            >
+              <p>Industries</p>
+            </a>
           </li>
           <li>
-            <NavLink
-              to="/industries"
+          <a
+              href="/products"
               onClick={closeMenu}
-              className={({ isActive }) => (isActive ? 'active' : '')}
+              className={`item ${window.location.pathname === "/products" ? "active" : ""}`}
             >
-              <div className="item"><p>Industries</p></div>
-            </NavLink>
+              <p>Products</p>
+            </a>
           </li>
           <li>
-            <NavLink
-              to="/products"
+          <a
+              href="/portfolio"
               onClick={closeMenu}
-              className={({ isActive }) => (isActive ? 'active' : '')}
+              className={`item ${window.location.pathname === "/portfolio" ? "active" : ""}`}
             >
-              <div className="item"><p>Products</p></div>
-            </NavLink>
+              <p>Portfolio</p>
+            </a>
           </li>
           <li>
-            <NavLink
-              to="/portfolio"
+          <a
+              href="/blogs"
               onClick={closeMenu}
-              className={({ isActive }) => (isActive ? 'active' : '')}
+              className={`item ${window.location.pathname === "/blogs" ? "active" : ""}`}
             >
-              <div className="item"><p>Portfolio</p></div>
-            </NavLink>
+              <p>Blogs</p>
+            </a>
           </li>
           <li>
-            <NavLink
-              to="/blogs"
+          <a
+              href="/about"
               onClick={closeMenu}
-              className={({ isActive }) => (isActive ? 'active' : '')}
+              className={`item ${window.location.pathname === "/about" ? "active" : ""}`}
             >
-              <div className="item"><p>Blogs</p></div>
-            </NavLink>
+              <p>About Us</p>
+            </a>
           </li>
           <li>
-            <NavLink
-              to="/about"
+          <a
+              href="/contact"
               onClick={closeMenu}
-              className={({ isActive }) => (isActive ? 'active' : '')}
+              className={`item ${window.location.pathname === "/contact" ? "active" : ""}`}
             >
-              <div className="item"><p>About Us</p></div>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/contact"
-              onClick={closeMenu}
-              className={({ isActive }) => (isActive ? 'active' : '')}
-            >
-              <div className="item"><p>Contact Us</p></div>
-            </NavLink>
+              <p>Contact Us</p>
+            </a>
           </li>
         </ul>
       </nav>
 
       {/* Get Quote Button */}
       <ul className="hover">
-        <NavLink
-          to="/get-quote"
-          onClick={closeMenu}
-          className={({ isActive }) => (isActive ? 'active' : '')}
-        >
-          Get Quote
-        </NavLink>
+      <a
+              href="/get-quote"
+              onClick={closeMenu}
+              className={`item ${window.location.pathname === "/get-quote" ? "active" : ""}`}
+            >
+              <p>Get Quote</p>
+            </a>
       </ul>
 
       {/* Mobile Menu Icon */}

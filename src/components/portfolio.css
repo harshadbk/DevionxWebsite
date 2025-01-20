@@ -148,4 +148,124 @@
   .project-slider .swiper-pagination-bullet-active {
     background-color: #2563eb;
   }
-  
+
+  /* Mobile First Approach */
+
+/* Adjust the card layout for small screens */
+@media (max-width: 767px) {
+  .slick-slide {
+    margin: 0 5px;
+  }
+
+  .mylogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+  }
+
+  .mylogo img {
+    height: 300px;  /* Adjust size to make it fit nicely */
+    width: 300px;   /* Make width equal to height to ensure circular shape */
+    border-radius: 50%;  /* Ensure the image is circular */
+    object-fit: cover;  /* Ensures image covers the circular area without distortion */
+  }
+  /* Adjust slider for mobile */
+  .slick-track {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .slick-slide img {
+    width: 100%;
+    height: auto;
+  }
+
+  .group {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .group:hover {
+    transform: translateY(-10px);
+  }
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* Stack the grid items */
+    gap: 16px;
+  }
+
+  /* Adjust button styles */
+  .btn {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+
+  .testimonial-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .testimonial-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .testimonial-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4c8bf5;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+/* Medium Screen Adjustments (Tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .testimonial-card {
+    flex-direction: row;
+    gap: 20px;
+  }
+}

@@ -1,340 +1,501 @@
 /* Ball Animation */
 @keyframes ballAnimation {
-    0% {
-      transform: translateY(0) translateX(0) rotate(0deg);
-    }
-    100% {
-      transform: translateY(100vh) translateX(50vw) rotate(360deg);
-    }
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
   }
-  
-  .main-container {
-    position: relative;
-    width: 100%;
-    height: 75vh;
-    overflow: hidden;
-    z-index: 1; /* Content above balloons */
-    padding: 20px;
-    text-align: center;
-    background: white;
+
+  100% {
+    transform: translateY(100vh) translateX(50vw) rotate(360deg);
   }
-  
-  /* Ball Container for Target Component */
-  .balls-container {
-    position: absolute; /* Absolute to stay within the component */
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    z-index: -1; /* Behind content */
-  }
-  
-  /* Ball Styling */
-  .ball {
-    position: absolute;
-    border-radius: 50%;
-    animation: ballAnimation linear infinite;
-    opacity: 0.4;
-    z-index: -1;
-    filter: blur(1px);
-  }
-  
-  /* Color Variations */
-  .ball:nth-child(6n+1) {
-    background-color: rgba(255, 0, 0, 0.5);
-    animation-duration: 6s;
-  }
-  
-  .ball:nth-child(6n+2) {
-    background-color: rgba(0, 0, 255, 0.5);
-    animation-duration: 7s;
-  }
-  
-  .ball:nth-child(6n+3) {
-    background-color: rgba(0, 255, 0, 0.5);
-    animation-duration: 5s;
-  }
-  
-  .ball:nth-child(6n+4) {
-    background-color: rgba(255, 255, 0, 0.5);
-    animation-duration: 6.5s;
-  }
-  
-  .ball:nth-child(6n+5) {
-    background-color: rgba(255, 165, 0, 0.5);
-    animation-duration: 5.5s;
-  }
-  
-  .ball:nth-child(6n) {
-    background-color: rgba(128, 0, 128, 0.5);
-    animation-duration: 4.5s;
-  }
-  
-  
-  /* Main Content */
-  main {
-    width: 100%;
-    height: 75vh;
-    /* background-color: #E3ECFE; */
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    padding-bottom: 20px;
-  }
-  
-  .content {
-    width: 60%;
-    padding: 0 1.5%;
-    margin-top: 70px;
-  }
-  
-  .primary-txt {
-    color: blue;
-    font-size: 60px;
-    font-weight: 600;
-  }
-  
-  .secondary-txt {
-    font-size: 60px;
-    font-weight: 600;
-    margin-top: -30px;
-  }
-  
-  .info {
-    width: 80%;
-    font-size: 19px;
-    margin-top: 20px;
-    color: #4B5563;
-  }
-  
+}
+
+.main-container {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+  z-index: 1;
+  /* Content above balloons */
+  padding: 20px;
+  text-align: center;
+  background: white;
+}
+
+/* Ball Container for Target Component */
+.balls-container {
+  position: absolute;
+  /* Absolute to stay within the component */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* Behind content */
+}
+
+/* Ball Styling */
+.ball {
+  position: absolute;
+  border-radius: 50%;
+  animation: ballAnimation linear infinite;
+  opacity: 0.4;
+  z-index: -1;
+  filter: blur(1px);
+}
+
+/* Color Variations */
+.ball:nth-child(6n+1) {
+  background-color: rgba(255, 0, 0, 0.5);
+  animation-duration: 6s;
+}
+
+.ball:nth-child(6n+2) {
+  background-color: rgba(0, 0, 255, 0.5);
+  animation-duration: 7s;
+}
+
+.ball:nth-child(6n+3) {
+  background-color: rgba(0, 255, 0, 0.5);
+  animation-duration: 5s;
+}
+
+.ball:nth-child(6n+4) {
+  background-color: rgba(255, 255, 0, 0.5);
+  animation-duration: 6.5s;
+}
+
+.ball:nth-child(6n+5) {
+  background-color: rgba(255, 165, 0, 0.5);
+  animation-duration: 5.5s;
+}
+
+.ball:nth-child(6n) {
+  background-color: rgba(128, 0, 128, 0.5);
+  animation-duration: 4.5s;
+}
+
+
+/* Main Content */
+main {
+  width: 100%;
+  height: 75vh;
+  /* background-color: #E3ECFE; */
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 20px;
+}
+
+.content {
+  width: 60%;
+  padding: 0 1.5%;
+  margin-top: 70px;
+}
+
+.primary-txt {
+  color: blue;
+  font-size: 60px;
+  font-weight: 600;
+}
+
+.secondary-txt {
+  font-size: 60px;
+  font-weight: 600;
+  margin-top: -30px;
+}
+
+.info {
+  width: 80%;
+  font-size: 19px;
+  margin-top: 20px;
+  color: #4B5563;
+}
+
 /* Common Button Styles */
-.hover, .btn2 {
+.hover,
+.btn2 {
   position: relative;
   display: inline-block;
-  padding: 12px 30px; /* Reduced padding for smaller width */
+  padding: 12px 30px;
+  /* Reduced padding for smaller width */
   color: #fff;
   text-transform: uppercase;
-  font-size: 16px; /* Reduced font size for balance */
+  font-size: 16px;
+  /* Reduced font size for balance */
   font-weight: bold;
   letter-spacing: 1.5px;
   text-decoration: none;
   overflow: hidden;
   transition: 0.3s;
-  border: 2px solid transparent; /* Slightly thinner border */
-  border-radius: 10px; /* Slightly smaller border-radius */
-  margin: 0 15px; /* Space between the two buttons */
+  border: 2px solid transparent;
+  /* Slightly thinner border */
+  border-radius: 10px;
+  /* Slightly smaller border-radius */
+  margin: 0 15px;
+  /* Space between the two buttons */
 }
 
 
 /* Span for Neon Borders */
-.hover::before, .btn2::before, 
-.hover::after, .btn2::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: 8px;
-    z-index: -1;
-    transition: 0.5s;
+.hover::before,
+.btn2::before,
+.hover::after,
+.btn2::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  z-index: -1;
+  transition: 0.5s;
 }
 
 /* Neon Glow for 'Get Started' */
 .hover::before {
-    background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #47ff00, #00ffee, #2b65ff, #8000ff, #ff0000);
-    background-size: 400%;
-    filter: blur(8px);
-    opacity: 0;
-    animation: glowing 8s linear infinite;
+  background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #47ff00, #00ffee, #2b65ff, #8000ff, #ff0000);
+  background-size: 400%;
+  filter: blur(8px);
+  opacity: 0;
+  animation: glowing 8s linear infinite;
 }
 
 .hover::after {
-    background-color: blue;
+  background-color: blue;
 }
 
 /* Hover Effect for 'Get Started' */
 .hover:hover::before {
-    opacity: 1;
+  opacity: 1;
 }
 
 .hover:hover {
-    color: black;
-    background-color: white;
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.7), 0 0 40px rgba(0, 255, 255, 0.7);
-    transform: scale(1.05);
+  color: black;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.7), 0 0 40px rgba(0, 255, 255, 0.7);
+  transform: scale(1.05);
 }
 
 /* Neon Glow for 'Learn More' */
 .btn2::before {
-    background: linear-gradient(45deg, #00ffcc, #0099ff, #cc00ff, #ff0077, #00ffcc);
-    background-size: 400%;
-    filter: blur(8px);
-    opacity: 0;
-    animation: glowing 8s linear infinite;
+  background: linear-gradient(45deg, #00ffcc, #0099ff, #cc00ff, #ff0077, #00ffcc);
+  background-size: 400%;
+  filter: blur(8px);
+  opacity: 0;
+  animation: glowing 8s linear infinite;
 }
 
 .btn2::after {
-    background-color: blue;
+  background-color: blue;
 }
 
 /* Hover Effect for 'Learn More' */
 .btn2:hover::before {
-    opacity: 1;
+  opacity: 1;
 }
 
 .btn2:hover {
-    color: black;
-    background-color: #fff;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 40px rgba(255, 0, 255, 0.7);
-    transform: scale(1.05);
+  color: black;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 40px rgba(255, 0, 255, 0.7);
+  transform: scale(1.05);
 }
 
 /* Glow Animation */
 @keyframes glowing {
-    0% {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: 400% 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
 }
 
 /* Click Feedback */
-.hover:active, .btn2:active {
-    transform: scale(0.95);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+.hover:active,
+.btn2:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
-  
-  .dashboard {
-    width: 60%;
-    height: 380px;
-    margin: 50px auto;
-    padding: 30px;
-    background: #f5d0d0;
-    border-radius: 25px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    transition: transform 0.4s ease-in-out;
+
+.dashboard {
+  width: 60%;
+  height: 380px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #f5d0d0;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease-in-out;
 }
 
 .dashboard:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
 }
 
 .card {
-    flex: 1 1 calc(45% - 25px);
-    height: 150px;
-    background: linear-gradient(135deg, #e0f7fa, #ffffff);
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.5s, box-shadow 0.5s;
-    position: relative;
-    overflow: hidden;
+  flex: 1 1 calc(45% - 25px);
+  height: 150px;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s, box-shadow 0.5s;
+  position: relative;
+  overflow: hidden;
 }
 
 .card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.3) 10%, transparent 10.01%);
-    background-size: 10% 10%;
-    opacity: 0;
-    transition: opacity 0.5s;
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 10.01%);
+  background-size: 10% 10%;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
 .card:hover::before {
-    opacity: 1;
+  opacity: 1;
 }
 
 .card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .dashboard-heading {
-    font-size: 2.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-para {
-    font-size: 1.1rem;
-    color: #555;
-    font-weight: 500;
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: 500;
 }
 
 .blue {
-    color: #2563EB;
+  color: #2563EB;
 }
 
 .purple {
-    color: #9333EA;
+  color: #9333EA;
 }
 
 .dark-blue {
-    color: #4F46E5;
+  color: #4F46E5;
 }
 
 .red {
-    color: #DB2777;
+  color: #DB2777;
 }
 
-@media (max-width: 768px) {
-    .card {
-        flex: 1 1 100%;
-        height: 160px;
+@media (max-width: 600px) {
+
+  /* Main container adjustments */
+  .main-container {
+    height: 175vh;
+    /* Adjust height for mobile responsiveness */
+    overflow: hidden;
+    /* Prevent unnecessary overflow */
+  }
+
+  @keyframes ballAnimation {
+    0% {
+      transform: translateY(0) translateX(0) rotate(0deg);
     }
 
-    .dashboard {
-        width: 90%;
+    100% {
+      transform: translateY(175vh) translateX(50vw) rotate(360deg);
     }
-}
-  
-  /* Mobile View */
-  @media screen and (max-width: 768px) {
-    main {
-      flex-direction: column;
-      gap: 20px;
-    }
-  
-    .content {
-      width: 90%;
-    }
-  
-    .primary-txt, .secondary-txt {
-      font-size: 40px;
-    }
-  
-    .btn2s a {
-      padding: 10px 20px;
-    }
-  
-    .card-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .dashboard {
-      width: 90%;
-    }
+  }
+
+  .info {
+    text-align: center;
+  }
+
+  /* Main section styling */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    /*Add padding to prevent elements from touching edges */
+  }
+
+  /* Content container styling */
+  .content {
+    padding-top: 20px;
+    width: 90%;
+    text-align: center;
+  }
+
+  /* Typography adjustments for primary and secondary text */
+  .primary-txt,
+  .secondary-txt {
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    /* Reduced font size for mobile */
+    line-height: 1.4;
+    word-spacing: 2px;
+  }
+
+  /* Button section adjustments */
+  .btns {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    /* Center the buttons */
+    margin-bottom: 0px;
+  }
+
+  .btns a {
+    padding: 12px 24px;
+    font-size: 10px;
+    width: 80%;
+    /* Make buttons responsive */
+    max-width: 300px;
+    /* Prevent buttons from becoming too large */
+    text-align: center;
+  }
+
+  /* Dashboard container adjustments */
+  .dashboard {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 0px;
+    margin-top: 0px;
+  }
+
+  /* Card container adjustments */
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+  }
+
+  /* Individual card adjustments */
+  .card {
+    width: 90px;
+    /* Set the card width to 90% of the screen */
+    height: 50px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #fff;
+    /* Card background color */
+    transition: box-shadow 0.3s ease;
+    /* Smooth transition for shadow */
+  }
+
+  .card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Darker shadow effect on hover */
+  }
+
+  /* Heading adjustments inside the dashboard */
+  .dashboard-heading {
+    font-size: 26px;
+    /* Adjusted for mobile */
+    font-weight: bold;
+    margin-bottom: 15px;
+    /* Added spacing */
+    text-align: center;
+    /* Center the heading */
+  }
+
+  /* Paragraph adjustments inside the dashboard */
+  .dashboard-para {
+    font-size: 16px;
+    /* Adjust font size for readability */
+    margin-top: 10px;
+    color: #666;
+    /* Lighter color for the paragraph text */
+    text-align: center;
+    /* Center align paragraph */
+  }
+
+  /* Adjust the card's content for mobile */
+  .card-content {
+    font-size: 14px;
+    /* Adjust text inside the card */
+    line-height: 1.5;
+    /* Increase line height for better readability */
+  }
+
+  /* Ensure that the content on cards adapts properly */
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .card-description {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .card-actions button {
+    padding: 10px 20px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 200px;
+    background-color: #4CAF50;
+    /* Button background color */
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .card-actions button:hover {
+    background-color: #45a049;
+    /* Darker background on hover */
+  }
 }

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import './footer.css';
@@ -123,7 +122,7 @@ const Footer = () => {
             <ul className="footer-contact">
               <li>📍 123 Tech Street, Innovation City</li>
               <li>✉️ info@devionx.com</li>
-              <li>📞 +123 456 7890</li>
+              <li>📞 9370613157 and 7666675306</li>
             </ul>
           </div>
         </div>

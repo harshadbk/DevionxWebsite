@@ -141,6 +141,22 @@ const Portfolio1 = () => {
     speed: 1000,
     slidesToShow: filteredProjects.length === 1 ? 1 : 3,
     slidesToScroll: 3,
+     responsive: [
+    {
+      breakpoint: 1024, // Tablets
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      },
+    },
+    {
+      breakpoint: 768, // Mobile
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
   };
   
 

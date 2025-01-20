@@ -19,7 +19,7 @@ function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);  // Scroll to top on route change
+    window.scrollTo(0, 0);
   }, [pathname]);
 
   return null;
@@ -36,14 +36,14 @@ function App() {
         <ScrollToTop />
         <Navbar />
         <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/industries" element={<Industries />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/get-quote" element={<GetQuote />} />
+          <Route path="/" element={<Homepage/>} />
+          <Route path="/services" element={<Services/>} />
+          <Route path='/industries' element={<Industries/>} />
+          <Route path="/portfolio" element={<Portfolio/>} />
+          <Route path="/blogs" element={<Blogs/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/contact" element={<Contact/>} />
+          <Route path="/get-quote" element={<GetQuote/>} />
         </Routes>
         <Faqs />
         <Footer />

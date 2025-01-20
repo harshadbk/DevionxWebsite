@@ -70,16 +70,24 @@ export default function Services() {
     autoplaySpeed: 2000,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1024, 
         settings: { slidesToShow: 2, slidesToScroll: 1 },
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
+        settings: { slidesToShow: 2, slidesToScroll: 1 },
+      },
+      {
+        breakpoint: 600,  // For typical mobile phones
         settings: { slidesToShow: 1, slidesToScroll: 1 },
+      },
+      {
+        breakpoint: 450,  // For very small screens
+        settings: { slidesToShow: 1, slidesToScroll: 1, dots: false },
       },
     ],
   };
-
+  
   return (
     <section id="services" className="services-section">
       <div className="container">
