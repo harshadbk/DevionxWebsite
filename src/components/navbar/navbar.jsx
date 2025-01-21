@@ -45,11 +45,11 @@ const Navbar = () => {
           <li>
             <div
               className="item"
-              onMouseEnter={() => handleDropdownToggle("Products")}
+              onMouseEnter={() => handleDropdownToggle("myservices")}
               onMouseLeave={() => handleDropdownToggle(null)}
             >
               <a href='/myservices' className={window.location.pathname === "/myservices" ? "active" : ""} onClick={closeMenu}>Services</a>
-              {activeDropdown === "Products" && (
+              {activeDropdown === "myservices" && (
                 <div className="dropdown">
                   <h3 style={{ fontWeight: "bold", textAlign: "center", color: "black" }}>Our Services</h3>
                   <ul className="inner-ul">
@@ -91,11 +91,11 @@ const Navbar = () => {
           <li>
             <div
               className="item"
-              onMouseEnter={() => handleDropdownToggle("Products")}
+              onMouseEnter={() => handleDropdownToggle("myindustries")}
               onMouseLeave={() => handleDropdownToggle(null)}
             >
-              <a href='/myindustries' className={window.location.pathname === "/products" ? "active" : ""} onClick={closeMenu}>Industries</a>
-              {activeDropdown === "Products" && (
+              <a href='/myindustries' className={window.location.pathname === "/myindustries" ? "active" : ""} onClick={closeMenu}>Industries</a>
+              {activeDropdown === "myindustries" && (
                 <div className="dropdown">
                   <h3 style={{ fontWeight: "bold", textAlign: "center", color: "black" }}>Our Industries</h3>
                   <ul className="inner-ul">
@@ -176,11 +176,11 @@ const Navbar = () => {
           <li>
             <div
               className="item"
-              onMouseEnter={() => handleDropdownToggle("Products")}
+              onMouseEnter={() => handleDropdownToggle("company")}
               onMouseLeave={() => handleDropdownToggle(null)}
             >
-              <a className={window.location.pathname === "/products" ? "active" : ""} onClick={closeMenu}>Company</a>
-              {activeDropdown === "Products" && (
+              <a className={window.location.pathname === "/company" ? "active" : ""} onClick={closeMenu}>Company</a>
+              {activeDropdown === "company" && (
                 <div className="dropdown">
                   <ul className="inner-ul">
                     <a href="/about">
