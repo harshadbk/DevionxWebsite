@@ -21,96 +21,94 @@ const GetInTouch = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto pl-100 ml-100">
             {/* <!-- Contact Form --> */}
-            <div className="bg-white rounded-2xl shadow-xl p-8 max-w-[1800px] mx-auto">
-  <h3 className="text-3xl font-bold text-center text-blue-600 mb-10">Send us a Message</h3>
-  <form className="space-y-10">
-    {/* Full Name Field */}
-    <div className="flex items-center space-x-6 mb-8">
-      <label className="text-gray-700 font-medium w-1/4" htmlFor="name">
-        Full Name
-      </label>
-      <input
-        type="text"
-        id="name"
-        className="w-3/4 px-6 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all ease-in-out"
-        placeholder="John Doe"
-        required
-      />
-    </div>
+            <div className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl w-full mx-auto">
+              <h3 className="text-3xl font-bold text-center text-blue-600 mb-10">
+                Send us a Message
+              </h3>
+              <form className="space-y-10">
+                {/* Full Name Field */}
+                <div className="flex items-center space-x-6 mb-8">
+                  <label className="text-gray-700 font-medium w-1/4" htmlFor="name">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    className="w-3/4 px-6 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all ease-in-out"
+                    placeholder="John Doe"
+                    required
+                  />
+                </div>
 
-    {/* Email Field */}
-    <div className="flex items-center space-x-6 mb-8">
-      <label className="text-gray-700 font-medium w-1/4" htmlFor="email">
-        Email Address
-      </label>
-      <input
-        type="email"
-        id="email"
-        className="w-3/4 px-6 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all ease-in-out"
-        placeholder="john@example.com"
-        required
-        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-        title="Please enter a valid email address"
-      />
-    </div>
+                {/* Email Field */}
+                <div className="flex items-center space-x-6 mb-8">
+                  <label className="text-gray-700 font-medium w-1/4" htmlFor="email">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    className="w-3/4 px-6 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all ease-in-out"
+                    placeholder="john@example.com"
+                    required
+                  />
+                </div>
 
-    {/* Phone Number Field */}
-    <div className="flex items-center space-x-6 mb-8">
-      <label className="text-gray-700 font-medium w-1/4" htmlFor="phone">
-        Phone Number
-      </label>
-      <input
-        type="tel"
-        id="phone"
-        className="w-3/4 px-6 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all ease-in-out"
-        placeholder="+1 (555) 000-0000"
-        required
-        pattern="^\+?[1-9]\d{1,14}$"
-        title="Please enter a valid phone number"
-      />
-    </div>
+                {/* Phone Number Field */}
+                <div className="flex items-center space-x-6 mb-8">
+                  <label className="text-gray-700 font-medium w-1/4" htmlFor="phone">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    className="w-3/4 px-6 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all ease-in-out"
+                    placeholder="+1 (555) 000-0000"
+                    required
+                  />
+                </div>
 
-    {/* Subject Field */}
-    <div className="flex items-center space-x-6 mb-8">
-      <label className="text-gray-700 font-medium w-1/4" htmlFor="subject">
-        Subject
-      </label>
-      <input
-        type="text"
-        id="subject"
-        className="w-3/4 px-6 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all ease-in-out"
-        placeholder="Project Discussion"
-        required
-      />
-    </div>
+                {/* Subject Field */}
+                <div className="flex items-center space-x-6 mb-8">
+                  <label className="text-gray-700 font-medium w-1/4" htmlFor="subject">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    className="w-3/4 px-6 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all ease-in-out"
+                    placeholder="Project Discussion"
+                    required
+                  />
+                </div>
 
-    {/* Message Field */}
-    <div className="flex items-center space-x-6 mb-8">
-      <label className="text-gray-700 font-medium w-1/4" htmlFor="message">
-        Message
-      </label>
-      <textarea
-        id="message"
-        rows="6"
-        className="w-3/4 px-6 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all ease-in-out"
-        placeholder="Tell us about your project..."
-        required
-      ></textarea>
-    </div>
+                {/* Message Field */}
+                <div className="flex items-center space-x-6 mb-8">
+                  <label className="text-gray-700 font-medium w-1/4" htmlFor="message">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    rows="6"
+                    className="w-3/4 px-6 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all ease-in-out"
+                    placeholder="Tell us about your project..."
+                    required
+                  ></textarea>
+                </div>
 
-    {/* Submit Button */}
-    <div className="text-center">
-      <button
-        type="submit"
-        className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-all ease-in-out"
-      >
-        Send Message
-      </button>
-    </div>
-  </form>
-</div>
+                {/* Submit Button */}
+                <div className="text-center">
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-all ease-in-out"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
             <div className="space-y-8">
               <div className="bg-white rounded-2xl shadow-xl p-8">
                 <h3 className="text-2xl font-bold mb-6 text-center">Contact Information</h3>

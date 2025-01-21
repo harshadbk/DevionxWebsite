@@ -19,14 +19,14 @@ header {
   padding: 0 1.3%;
   position: fixed;
   top: 0;
-  z-index: 999;
+  z-index: 100;
 }
 
 .logo {
   width: 100px;
   padding-inline-start: 0px;
   padding-block: 0px;
-  height: 80px;
+  height: 50px;
 }
 
 .logo img {
@@ -50,7 +50,7 @@ header {
   list-style: none;
   justify-content: center;
   text-align: center;
-  padding-right: 10px;
+  padding: 10px;
 }
 
 .navlinks li a {
@@ -58,6 +58,7 @@ header {
   color: #000;
   font-weight: 600;
   transition: color 0.3s ease;
+  padding-bottom: 50px;
 }
 
 .navlinks li a:hover {
@@ -67,6 +68,107 @@ header {
 .navlinks li.active a {
   color: #2563EB;
 }
+
+.item {
+  position: relative;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.item:hover {
+  color: #007bff;
+}
+
+.dropdown {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 250px;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease-in-out;
+}
+
+.item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dropdown Header */
+.dropdown h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  padding: 15px;
+  text-align: center;
+  background: #007bff;
+  color: white;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.inner-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.inner-ul-list {
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s ease-in-out;
+}
+
+.inner-ul li:last-child {
+  border-bottom: none;
+}
+
+.inner-ul li:hover {
+  background: #f8f9fa;
+  color: #007bff;
+  transform: translateX(5px);
+}
+.inner-ul a {
+  text-decoration: none;
+  color: inherit;
+  
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .dropdown {
+    width: 100%;
+    position: relative;
+    top: 0;
+    box-shadow: none;
+  }
+
+  .item {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+
+  .inner-ul li {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .dropdown h3 {
+    font-size: 18px;
+    padding: 10px;
+  }
+}
+
 
 /* Quote Button */
 .quote-btn {

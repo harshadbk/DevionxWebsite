@@ -114,7 +114,7 @@ export default function Services() {
                 {service.features.map((feature, i) => (
                   <li key={i} className="service-feature">
                     <svg
-                      className="check-icon"
+                      className="check-icons"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"

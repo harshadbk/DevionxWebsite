@@ -276,9 +276,6 @@ const Portfolio1 = () => {
                   </div>
                 </div>
               </div>
-              <p className="testimonial-text">
-                "DevionX Technologies delivered an exceptional e-commerce platform that exceeded our expectations. Their expertise in both frontend and backend development is remarkable."
-              </p>
               <div className="rating">
                 <div className="stars">
                   <svg className="star" fill="currentColor" viewBox="0 0 20 20">
@@ -298,6 +295,9 @@ const Portfolio1 = () => {
                   </svg>
                 </div>
               </div>
+              <p className="testimonial-text">
+                "DevionX Technologies delivered an exceptional e-commerce platform that exceeded our expectations. Their expertise in both frontend and backend development is remarkable."
+              </p>
             </div>
 
             {/* <!-- Testimonial 2 --> */}
@@ -313,11 +313,6 @@ const Portfolio1 = () => {
                   </div>
                 </div>
               </div>
-              <p className="testimonial-text">
-                "The AI-powered analytics solution provided by DevionX has
-                transformed our decision-making process. Their team's technical
-                expertise is outstanding."
-              </p>
               <div className="rating">
                 <div className="stars">
                   <svg className="star" fill="currentColor" viewBox="0 0 20 20">
@@ -337,6 +332,11 @@ const Portfolio1 = () => {
                   </svg>
                 </div>
               </div>
+              <p className="testimonial-text">
+                "The AI-powered analytics solution provided by DevionX has
+                transformed our decision-making process. Their team's technical
+                expertise is outstanding."
+              </p>
             </div>
 
             {/* <!-- Testimonial 3 --> */}
@@ -352,9 +352,6 @@ const Portfolio1 = () => {
                   </div>
                 </div>
               </div>
-              <p className="testimonial-text">
-                "Working with DevionX on our educational platform was a game-changer. Their innovative approach and dedication to quality is unmatched Their team's technical expertise is outstanding.."
-              </p>
               <div className="rating">
                 <div className="stars">
                   <svg className="star" fill="currentColor" viewBox="0 0 20 20">
@@ -374,6 +371,9 @@ const Portfolio1 = () => {
                   </svg>
                 </div>
               </div>
+              <p className="testimonial-text">
+                "Working with DevionX on our educational platform was a game-changer. Their innovative approach and dedication to quality is unmatched Their team's technical expertise is outstanding.."
+              </p>
             </div>
           </div>
 
@@ -392,7 +392,7 @@ const Portfolio1 = () => {
                 />
                 <p class="text-3xl font-bold">
                   <CountUp to={50} from={0} delay={0.5} duration={0.5} className="count-up" />
-                  <span class="text-blue-600">+</span>
+                  <span class="text-black-600">+</span>
                 </p>
                 <p class="text-black">Successful Projects</p>
               </div>
@@ -405,7 +405,7 @@ const Portfolio1 = () => {
                 />
                 <p class="text-3xl font-bold">
                   <CountUp to={30} from={0} delay={0.5} duration={0.5} className="count-up" />
-                  <span class="text-blue-600">+</span>
+                  <span class="text-black-600">+</span>
                 </p>
                 <p class="text-black">Software Development Experts</p>
               </div>
@@ -418,7 +418,7 @@ const Portfolio1 = () => {
                 />
                 <p class="text-3xl font-bold">
                   <CountUp to={50} from={0} delay={0.5} duration={0.5} className="count-up" />
-                  <span class="text-blue-600">+</span>
+                  <span class="text-black-600">+</span>
                 </p>
                 <p class="text-black">Loyal Customers</p>
               </div>
@@ -431,7 +431,7 @@ const Portfolio1 = () => {
                 />
                 <p class="text-3xl font-bold">
                   <CountUp to={100} from={0} delay={0.5} duration={0.5} className="count-up" />
-                  <span class="text-blue-600">%</span>
+                  <span class="text-black-600">%</span>
                 </p>
                 <p class="text-black">Success Guarantees</p>
               </div>

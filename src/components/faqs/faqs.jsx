@@ -56,11 +56,11 @@ const styles = {
   rowContentPaddingLeft: "10px",
 };
 
-const config = {
-  animate: true,
-  arrowIcon: "▼",
-  tabFocus: true,
-};
+// const config = {
+//   animate: true,
+//   arrowIcon: "▼",
+//   tabFocus: true,
+// };
 
 const FaqComp = () => {
   const [activeIndex, setActiveIndex] = useState(null);
