@@ -45,7 +45,11 @@ const Home = () => {
     document.getElementById('target-section').appendChild(ballsContainer);
 
     return () => {
-      document.getElementById('target-section').removeChild(ballsContainer);
+      // document.getElementById('target-section').removeChild(ballsContainer);
+      const targetSection = document.getElementById('target-section');
+      if (targetSection && ballsContainer) {
+        targetSection.removeChild(ballsContainer);
+      }
     };
   }, []);
 
