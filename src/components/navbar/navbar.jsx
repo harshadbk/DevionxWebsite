@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import './navbar.css';
-import Logo from '../../assets/devon.png';
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import "./navbar.css";
+import Logo from "../../assets/devon.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,14 +11,14 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 1200);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -30,59 +30,109 @@ const Navbar = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      {/* Logo */}
+    <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="logo">
         <NavLink to="/" onClick={closeMenu}>
           <img src={Logo} alt="Logo" />
         </NavLink>
       </div>
-
-      {/* Navigation Links */}
       <nav>
-        <ul className={`navlinks ${isOpen ? 'nav-open' : ''}`}>
-          <li><NavLink to="/" onClick={closeMenu} className={({ isActive }) => (isActive ? 'active' : '')}>Home</NavLink></li>
+        <ul className={`navlinks ${isOpen ? "nav-open" : ""}`}>
+          <li>
+            <NavLink
+              to="/"
+              onClick={closeMenu}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Home
+            </NavLink>
+          </li>
           <li>
             <div
               className="item"
-              onMouseEnter={() => handleDropdownToggle("myservices")}
+              onMouseEnter={() => handleDropdownToggle("services")}
               onMouseLeave={() => handleDropdownToggle(null)}
             >
-              <a href='/myservices' className={window.location.pathname === "/myservices" ? "active" : ""} onClick={closeMenu}>Services</a>
-              {activeDropdown === "myservices" && (
+              <NavLink to="/myservices" onClick={closeMenu}>
+                Services
+              </NavLink>
+              {activeDropdown === "services" && (
                 <div className="dropdown">
-                  <h3 style={{ fontWeight: "bold", textAlign: "center", color: "black" }}>Our Services</h3>
+                  <h3>Our Services</h3>
+                  <ul>
+                    <li>
+                      <NavLink to="/service1" onClick={closeMenu}>Web Development</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/service2" onClick={closeMenu}>Mobile Development</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/service3" onClick={closeMenu}>UI/UX Design</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/service4" onClick={closeMenu}>AI & ML Solutions</NavLink>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          </li>
+ 
+          <li>
+            <div
+              className="item"
+              onMouseEnter={() => handleDropdownToggle("industries")}
+              onMouseLeave={() => handleDropdownToggle(null)}
+            >
+              <NavLink
+                to="/industries"
+                className={({ isActive }) => (isActive ? "active" : "")}
+                onClick={closeMenu}
+              >
+                Industries
+              </NavLink>
+              {activeDropdown === "industries" && (
+                <div className="dropdown">
+                  <h3
+                    style={{
+                      fontWeight: "bold",
+                      textAlign: "center",
+                      color: "black",
+                    }}
+                  >
+                    Our Industries
+                  </h3>
                   <ul className="inner-ul">
-                    <a href="/service1">
+                    <NavLink to="/industry1" onClick={closeMenu}>
                       <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                        Web Development
+                        Manufacturing
                       </li>
-                    </a>
-                    <a href="/service2">
-                    <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      Mobile Development
-                    </li>
-                    </a>
-                    <a href="/service3">
-                    <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      UI/UX Design
-                    </li>
-                    </a>
-                    <a href="/service4">
-                    <li className="px-5 py-3 text-lg text-gray-800 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      AI & ML Solutions
-                    </li>
-                    </a>
-                    <a href="/service5">
-                    <li className="px-5 py-3 text-lg text-gray-800 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      IT Consulting
-                    </li>
-                    </a>
-                    <a href="/service6">
-                    <li className="px-5 py-3 text-lg text-gray-800 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      Cloud Services
-                    </li>
-                    </a>
+                    </NavLink>
+                    <NavLink to="/industry2" onClick={closeMenu}>
+                      <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
+                        Healthcare
+                      </li>
+                    </NavLink>
+                    <NavLink to="/industry3" onClick={closeMenu}>
+                      <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
+                        Education
+                      </li>
+                    </NavLink>
+                    <NavLink to="/industry4" onClick={closeMenu}>
+                      <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
+                        E-Commerce
+                      </li>
+                    </NavLink>
+                    <NavLink to="/industry5" onClick={closeMenu}>
+                      <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
+                        Finance & Banking
+                      </li>
+                    </NavLink>
+                    <NavLink to="/industry6" onClick={closeMenu}>
+                      <li className="px-5 py-3 text-lg text-gray-800 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
+                        Real Estate
+                      </li>
+                    </NavLink>
                   </ul>
                 </div>
               )}
@@ -91,124 +141,48 @@ const Navbar = () => {
           <li>
             <div
               className="item"
-              onMouseEnter={() => handleDropdownToggle("myindustries")}
+              onMouseEnter={() => handleDropdownToggle("products")}
               onMouseLeave={() => handleDropdownToggle(null)}
             >
-              <a href='/myindustries' className={window.location.pathname === "/myindustries" ? "active" : ""} onClick={closeMenu}>Industries</a>
-              {activeDropdown === "myindustries" && (
+              <NavLink
+                to="/products"
+                className={({ isActive }) => (isActive ? "active" : "")}
+                onClick={closeMenu}
+              >
+                Products
+              </NavLink>
+              {activeDropdown === "products" && (
                 <div className="dropdown">
-                  <h3 style={{ fontWeight: "bold", textAlign: "center", color: "black" }}>Our Industries</h3>
+                  <h3
+                    style={{
+                      fontWeight: "bold",
+                      textAlign: "center",
+                      color: "black",
+                    }}
+                  >
+                    Our Products
+                  </h3>
                   <ul className="inner-ul">
-                    <a href="/industry1">
-                    <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      Manufacturing
-                    </li>
-                    </a>
-                    <a href="/industry2">
-                    <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      Healthcare
-                    </li>
-                    </a>
-                    <a href="/industry3">
-                    <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      Education
-                    </li>
-                    </a>
-                    <a href="/industry4">
-                    <li className="px-5 py-3 text-lg text-gray-800 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      E-Commerce
-                    </li>
-                    </a>
-                    <a href="/industry5">
-                    <li className="px-5 py-3 text-lg text-gray-800 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      Finance & Banking
-                    </li>
-                    </a>
-                    <a href="/industry6">
-                    <li className="px-5 py-3 text-lg text-gray-800 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      Real Estate
-                    </li>
-                    </a>
-                  </ul>
-                </div>
-              )}
-            </div>
-          </li>
-          <li>
-            <div
-              className="item"
-              onMouseEnter={() => handleDropdownToggle("Products")}
-              onMouseLeave={() => handleDropdownToggle(null)}
-            >
-              <a href='/products' className={window.location.pathname === "/products" ? "active" : ""} onClick={closeMenu}>Products</a>
-              {activeDropdown === "Products" && (
-                <div className="dropdown">
-                  <h3 style={{ fontWeight: "bold", textAlign: "center", color: "black" }}>Our Products</h3>
-                  <ul className="inner-ul">
-                    <a href="/product1">
-                    <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      LMS (Learning Management System)
-                    </li>
-                    </a>
-                    <a href="/product2">
-                    <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      ERS (Enterprise Resource Planning System)
-                    </li>
-                    
-                    </a>
-                    <a href="/product3">
-                    <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      CRM (Customer Relationship Management)
-                    </li>
-                    </a>
-                    <a href="/product4">
-                    <li className="px-5 py-3 text-lg text-gray-800 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      E-Commerce
-                    </li>
-                    </a>
-                  </ul>
-                </div>
-              )}
-            </div>
-          </li>
-          <li><a href="/portfolio" className={window.location.pathname === "/portfolio" ? "active" : ""} onClick={closeMenu}>Portfolio</a></li>
-          <li><a href="/blogs" className={window.location.pathname === "/blogs" ? "active" : ""} onClick={closeMenu}>Blogs</a></li>
-          <li>
-            <div
-              className="item"
-              onMouseEnter={() => handleDropdownToggle("company")}
-              onMouseLeave={() => handleDropdownToggle(null)}
-            >
-              <a className={window.location.pathname === "/company" ? "active" : ""} onClick={closeMenu}>Company</a>
-              {activeDropdown === "company" && (
-                <div className="dropdown">
-                  <ul className="inner-ul">
-                    <a href="/about">
-                    <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      About Us
-                    </li>
-                    </a>
-                    <a href="/get-quote">
-                    <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      Contact Us
-                    </li>
-                    
-                    </a>
-                    <a href="/testimonials">
-                    <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                      Testimonials
-                    </li>
-                    </a>
-                    <a href="/carrier">
-                    <li className="px-5 py-3 text-lg text-gray-800 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                     Carriers
-                    </li>
-                    </a>
-                    <a href="/leadership">
-                    <li className="px-5 py-3 text-lg text-gray-800 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                     Leadership
-                    </li>
-                    </a>
+                    <NavLink to="/product1" onClick={closeMenu}>
+                      <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
+                        LMS (Learning Management System)
+                      </li>
+                    </NavLink>
+                    <NavLink to="/product2" onClick={closeMenu}>
+                      <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
+                        ERP (Enterprise Resource Planning)
+                      </li>
+                    </NavLink>
+                    <NavLink to="/product3" onClick={closeMenu}>
+                      <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
+                        CRM (Customer Relationship Management)
+                      </li>
+                    </NavLink>
+                    <NavLink to="/product4" onClick={closeMenu}>
+                      <li className="px-5 py-3 text-lg text-gray-800 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
+                        E-Commerce
+                      </li>
+                    </NavLink>
                   </ul>
                 </div>
               )}
@@ -216,14 +190,15 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-
-      {/* Get Quote Button */}
       <div className="hover">
-        <a href="/get-quote" className={window.location.pathname === "/get-quote" ? "active" : ""} onClick={closeMenu}>Get Quote</a>
+        <NavLink to="/get-quote" onClick={closeMenu}>
+          Get Quote
+        </NavLink>
       </div>
-
-      {/* Mobile Menu Icon */}
-      <div className={`mobile-menu ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+      <div
+        className={`mobile-menu ${isOpen ? "open" : ""}`}
+        onClick={toggleMenu}
+      >
         <div className="box"></div>
         <div className="box"></div>
         <div className="box"></div>
