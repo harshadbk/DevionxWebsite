@@ -188,6 +188,49 @@ const Navbar = () => {
               )}
             </div>
           </li>
+          <li><NavLink to="/portfolio" className={window.location.pathname === "/portfolio" ? "active" : ""} onClick={closeMenu}>Portfolio</NavLink></li>
+          <li><NavLink to="/blogs" className={window.location.pathname === "/blogs" ? "active" : ""} onClick={closeMenu}>Blogs</NavLink></li>
+          <li>
+            <div
+              className="item"
+              onMouseEnter={() => handleDropdownToggle("company")}
+              onMouseLeave={() => handleDropdownToggle(null)}
+            >
+              <NavLink className={window.location.pathname === "/company" ? "active" : ""} onClick={closeMenu}>Company</NavLink>
+              {activeDropdown === "company" && (
+                <div className="dropdown">
+                  <ul className="inner-ul">
+                    <NavLink onTouchEnd="/about">
+                    <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
+                      About Us
+                    </li>
+                    </NavLink>
+                    <NavLink to="/get-quote">
+                    <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
+                      Contact Us
+                    </li>
+                    
+                    </NavLink>
+                    <NavLink to="/testimonials">
+                    <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
+                      Testimonials
+                    </li>
+                    </NavLink>
+                    <NavLink to="/carrier">
+                    <li className="px-5 py-3 text-lg text-gray-800 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
+                     Carriers
+                    </li>
+                    </NavLink>
+                    <NavLink to="/leadership">
+                    <li className="px-5 py-3 text-lg text-gray-800 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
+                     Leadership
+                    </li>
+                    </NavLink>
+                  </ul>
+                </div>
+              )}
+            </div>
+          </li>
         </ul>
       </nav>
       <div className="hover">

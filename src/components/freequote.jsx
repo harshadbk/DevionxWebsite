@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 const FreeQuote = () => {
   const [step, setStep] = useState(1);
@@ -7,7 +8,7 @@ const FreeQuote = () => {
     company: '',
     email: '',
     phone: '',
-    services: [],
+    services: '',
     budget: '',
     timeline: '',
     description: ''
@@ -16,11 +17,18 @@ const FreeQuote = () => {
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     if (type === 'checkbox') {
+      const selectedServices = formData.services ? formData.services.split(',') : [];
+      if (checked) {
+        selectedServices.push(value);
+      } else {
+        const index = selectedServices.indexOf(value);
+        if (index !== -1) {
+          selectedServices.splice(index, 1);
+        }
+      }
       setFormData((prevData) => ({
         ...prevData,
-        services: checked
-          ? [...prevData.services, value]
-          : prevData.services.filter((service) => service !== value)
+        services: selectedServices.join(',')
       }));
     } else {
       setFormData((prevData) => ({ ...prevData, [name]: value }));
@@ -29,10 +37,46 @@ const FreeQuote = () => {
 
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Form Submitted:', formData);
+  
+    try {
+      const response = await fetch('http://localhost:5000/addquote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      await emailjs.send('service_37krz59', 'template_hp1fe32', formData, 'rjLdKMEoEpqhYRpVw');
+  
+      const result = await response.json();
+      if (result.success) {
+        alert(`Thank you, ${result.name}, for your request!`);
+        setFormData({
+          name: '',
+          company: '',
+          email: '',
+          phone: '',
+          services: '',
+          budget: '',
+          timeline: '',
+          description: ''
+        });
+        setStep(1);  // Reset the form to step 1
+      } else {
+        alert('Failed to submit quote request.');
+      }
+      
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Error submitting the form. Please try again.');
+    }
   };
+  
 
   return (
     <div id="root">
@@ -52,6 +96,7 @@ const FreeQuote = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
               <form onSubmit={handleSubmit} className="space-y-8">
+                {/* Step 1: Personal Details */}
                 {step === 1 && (
                   <div className="space-y-6">
                     <h3 className="text-2xl font-bold">Personal Details</h3>
@@ -59,8 +104,8 @@ const FreeQuote = () => {
                       <input
                         type="text"
                         name="name"
-                        value={formData.name}
                         onChange={handleChange}
+                        value={formData.name}
                         placeholder="Full Name *"
                         className="w-full px-4 py-3 rounded-lg border"
                         required
@@ -95,6 +140,7 @@ const FreeQuote = () => {
                   </div>
                 )}
 
+                {/* Step 2: Services Required */}
                 {step === 2 && (
                   <div className="space-y-6">
                     <h3 className="text-2xl font-bold">Services Required</h3>
@@ -104,7 +150,7 @@ const FreeQuote = () => {
                           <input
                             type="checkbox"
                             value={service}
-                            checked={formData.services.includes(service)}
+                            checked={formData.services.split(',').includes(service)}
                             onChange={handleChange}
                             className="form-checkbox"
                           />
@@ -115,6 +161,7 @@ const FreeQuote = () => {
                   </div>
                 )}
 
+                {/* Step 3: Project Budget */}
                 {step === 3 && (
                   <div className="space-y-6">
                     <h3 className="text-2xl font-bold">Project Budget</h3>
@@ -134,6 +181,7 @@ const FreeQuote = () => {
                   </div>
                 )}
 
+                {/* Step 4: Project Timeline */}
                 {step === 4 && (
                   <div className="space-y-6">
                     <h3 className="text-2xl font-bold">Project Timeline</h3>
@@ -153,6 +201,7 @@ const FreeQuote = () => {
                   </div>
                 )}
 
+                {/* Step 5: Project Description */}
                 {step === 5 && (
                   <div className="space-y-6">
                     <h3 className="text-2xl font-bold">Project Description</h3>
@@ -167,6 +216,7 @@ const FreeQuote = () => {
                   </div>
                 )}
 
+                {/* Navigation Buttons */}
                 <div className="flex justify-between pt-6">
                   {step > 1 && (
                     <button type="button" onClick={prevStep} className="px-6 py-2 bg-gray-300 rounded-lg">
@@ -178,7 +228,7 @@ const FreeQuote = () => {
                       Next
                     </button>
                   ) : (
-                    <button type="submit" className="px-6 py-2 bg-green-600 text-white rounded-lg">
+                    <button type="button" className="px-6 py-2 bg-green-600 text-white rounded-lg" onClick={handleSubmit}>
                       Get Your Free Quote
                     </button>
                   )}

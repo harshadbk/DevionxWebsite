@@ -1,14 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 const GetInTouch = () => {
+  const [touch, setTouch] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    setTouch({ ...touch, [e.target.name]: e.target.value });
+  };
+
+  const handleAddTouch = async (e) => {
+    e.preventDefault();
+    console.log(touch);
+    try {
+      const response = await fetch('http://127.0.0.1:5000/addtouch', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(touch),
+      });
+      const data = await response.json();
+      await emailjs.send('service_37krz59', 'template_6d0xamp', touch, 'rjLdKMEoEpqhYRpVw');
+      if (data.success) {
+        alert('Message sent successfully');
+        setTouch({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        alert('Message sending failed');
+      }
+        
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('An error occurred while sending the message');
+    }
+  };
+
   return (
     <div id="root">
-      <section
-        id="Contact"
-        className="py-20 bg-gradient-to-b from-blue-50 to-white"
-      >
+      <section id="Contact" className="py-20 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4">
-          {/* <!-- Section Header --> */}
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -16,19 +58,16 @@ const GetInTouch = () => {
               </span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Ready to transform your ideas into reality? Contact us today for
-              a free consultation about your project.
+              Ready to transform your ideas into reality? Contact us today for a free consultation about your project.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto pl-100 ml-100">
-            {/* <!-- Contact Form --> */}
+          <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
             <div className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl w-full mx-auto">
               <h3 className="text-3xl font-bold text-center text-blue-600 mb-10">
                 Send us a Message
               </h3>
-              <form className="space-y-10">
-                {/* Full Name Field */}
+              <form className="space-y-10" onSubmit={handleAddTouch}>
                 <div className="flex items-center space-x-6 mb-8">
                   <label className="text-gray-700 font-medium w-1/4" htmlFor="name">
                     Full Name
@@ -36,13 +75,15 @@ const GetInTouch = () => {
                   <input
                     type="text"
                     id="name"
+                    name="name"
+                    value={touch.name}
+                    onChange={handleChange}
                     className="w-3/4 px-6 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all ease-in-out"
                     placeholder="John Doe"
                     required
                   />
                 </div>
 
-                {/* Email Field */}
                 <div className="flex items-center space-x-6 mb-8">
                   <label className="text-gray-700 font-medium w-1/4" htmlFor="email">
                     Email Address
@@ -50,13 +91,15 @@ const GetInTouch = () => {
                   <input
                     type="email"
                     id="email"
+                    name="email"
+                    value={touch.email}
+                    onChange={handleChange}
                     className="w-3/4 px-6 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all ease-in-out"
                     placeholder="john@example.com"
                     required
                   />
                 </div>
 
-                {/* Phone Number Field */}
                 <div className="flex items-center space-x-6 mb-8">
                   <label className="text-gray-700 font-medium w-1/4" htmlFor="phone">
                     Phone Number
@@ -64,13 +107,15 @@ const GetInTouch = () => {
                   <input
                     type="tel"
                     id="phone"
+                    name="phone"
+                    value={touch.phone}
+                    onChange={handleChange}
                     className="w-3/4 px-6 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all ease-in-out"
                     placeholder="+1 (555) 000-0000"
                     required
                   />
                 </div>
 
-                {/* Subject Field */}
                 <div className="flex items-center space-x-6 mb-8">
                   <label className="text-gray-700 font-medium w-1/4" htmlFor="subject">
                     Subject
@@ -78,27 +123,31 @@ const GetInTouch = () => {
                   <input
                     type="text"
                     id="subject"
+                    name="subject"
+                    value={touch.subject}
+                    onChange={handleChange}
                     className="w-3/4 px-6 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all ease-in-out"
                     placeholder="Project Discussion"
                     required
                   />
                 </div>
 
-                {/* Message Field */}
                 <div className="flex items-center space-x-6 mb-8">
                   <label className="text-gray-700 font-medium w-1/4" htmlFor="message">
                     Message
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows="6"
+                    value={touch.message}
+                    onChange={handleChange}
                     className="w-3/4 px-6 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all ease-in-out"
                     placeholder="Tell us about your project..."
                     required
                   ></textarea>
                 </div>
 
-                {/* Submit Button */}
                 <div className="text-center">
                   <button
                     type="submit"
@@ -109,6 +158,7 @@ const GetInTouch = () => {
                 </div>
               </form>
             </div>
+
             <div className="space-y-8">
               <div className="bg-white rounded-2xl shadow-xl p-8">
                 <h3 className="text-2xl font-bold mb-6 text-center">Contact Information</h3>
