@@ -13,7 +13,7 @@
   position: relative;
   padding-top: 0px;
   width: 100%;
-  height: 75vh;
+  height: 100vh;
   overflow: hidden;
   z-index: 1;
   /* Content above balloons */
@@ -84,8 +84,7 @@ main {
   height: 75vh;
   /* background-color: #E3ECFE; */
   display: flex;
-  justify-content: space-between;
-  gap: 40px;
+  gap: 0px;
   padding-bottom: 20px;
 }
 
@@ -114,6 +113,11 @@ main {
   color: #4B5563;
 }
 
+
+.btns{
+  margin-left:-100px ;
+  padding-top: 50px;
+}
 /* Common Button Styles */
 .hover,
 .btn2 {
@@ -134,7 +138,7 @@ main {
   /* Slightly thinner border */
   border-radius: 10px;
   /* Slightly smaller border-radius */
-  margin: 0 15px;
+  margin: 0px 1px ;
   /* Space between the two buttons */
 }
 
@@ -237,8 +241,12 @@ main {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   transition: transform 0.4s ease-in-out;
 }
+.dashboards{
+  background: #f5d0d0;
 
-.dashboard:hover {
+}
+
+.dashboards:hover {
   transform: scale(1.02);
 }
 
@@ -276,12 +284,15 @@ main {
   opacity: 0;
   transition: opacity 0.5s;
 }
+.cards{
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+}
 
-.card:hover::before {
+.cards:hover::before {
   opacity: 1;
 }
 
-.card:hover {
+.cards:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
@@ -319,10 +330,16 @@ main {
 
   /* Main container adjustments */
   .main-container {
-    height: 175vh;
+    height: 100%;
     /* Adjust height for mobile responsiveness */
     overflow: hidden;
     /* Prevent unnecessary overflow */
+  }
+
+
+  .btns{
+    margin-left:10px ;
+    padding-top: 50px;
   }
 
   @keyframes ballAnimation {
@@ -337,7 +354,12 @@ main {
 
   .info {
     text-align: center;
+    margin-left: 25px;
   }
+
+
+
+
 
   /* Main section styling */
   main {
@@ -345,9 +367,24 @@ main {
     flex-direction: column;
     align-items: center;
     height: 100%;
-    padding: 20px;
+    padding: 10px;
     /*Add padding to prevent elements from touching edges */
   }
+.class-1{
+  width: 95%;
+height: 20%;
+}
+
+
+    .class-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
+      grid-template-rows: repeat(2, auto);  /* Always 2 rows */
+      gap: 1rem; /* Adjust gap if needed */
+      width: 100%; /* Ensure it takes full width */
+      height: auto; /* Adjust height as needed */
+    }
+  
 
   /* Content container styling */
   .content {
@@ -434,7 +471,7 @@ main {
 
   /* Heading adjustments inside the dashboard */
   .dashboard-heading {
-    font-size: 26px;
+    font-size: 28px;
     /* Adjusted for mobile */
     font-weight: bold;
     margin-bottom: 15px;
@@ -445,7 +482,7 @@ main {
 
   /* Paragraph adjustments inside the dashboard */
   .dashboard-para {
-    font-size: 16px;
+    font-size: 28px;
     /* Adjust font size for readability */
     margin-top: 10px;
     color: #666;
@@ -456,7 +493,7 @@ main {
 
   /* Adjust the card's content for mobile */
   .card-content {
-    font-size: 14px;
+    font-size: 28px;
     /* Adjust text inside the card */
     line-height: 1.5;
     /* Increase line height for better readability */
@@ -464,13 +501,13 @@ main {
 
   /* Ensure that the content on cards adapts properly */
   .card-title {
-    font-size: 18px;
+    font-size: 28px;
     font-weight: bold;
     margin-bottom: 10px;
   }
 
   .card-description {
-    font-size: 14px;
+    font-size: 28px;
     margin-bottom: 10px;
   }
 
@@ -483,7 +520,7 @@ main {
 
   .card-actions button {
     padding: 10px 20px;
-    font-size: 14px;
+    font-size: 28px;
     width: 100%;
     max-width: 200px;
     background-color: #4CAF50;
@@ -499,4 +536,25 @@ main {
     background-color: #45a049;
     /* Darker background on hover */
   }
+}
+
+@media (max-width: 780px) {
+
+  /* Main section styling */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    /*Add padding to prevent elements from touching edges */
+  }
+
+  /* Content container styling */
+  .content {
+    padding-top: 20px;
+    width: 90%;
+    text-align: center;
+  }
+
 }

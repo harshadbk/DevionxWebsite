@@ -157,7 +157,7 @@ const testimonials = () => {
                                 alt="Projects Icon"
                                 class="mx-auto h-12 mb-4"
                             />
-                            <p class="text-3xl font-bold">
+                            <p class="text-3xl font-bold flex flex-row">
                                 <CountUp to={50} from={0} delay={0.5} duration={0.5} className="count-up" />
                                 <span class="text-black-600">+</span>
                             </p>
@@ -198,7 +198,7 @@ const testimonials = () => {
                             />
                             <p class="text-3xl font-bold">
                                 <CountUp to={100} from={0} delay={0.5} duration={0.5} className="count-up" />
-                                <span class="text-black-600">%</span>
+                                <span class="text-black-600 text-3xl" >%</span>
                             </p>
                             <p class="text-black">Success Guarantees</p>
                         </div>
