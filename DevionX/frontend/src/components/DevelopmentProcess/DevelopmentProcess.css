@@ -1,0 +1,215 @@
+/* Background and General Styles */
+.development-process {
+    background-color: #000;
+    background-image: url('https://placehold.co/1920x1080/000000/000000.png?text=Background+Grid');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+/* Title and Subtitle */
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Timeline Wrapper */
+.timeline-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+/* Central Timeline Line */
+.timeline-line {
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background-color: white;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Steps Container */
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+}
+
+/* Step Cards */
+.step-card {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: left;
+    position: relative;
+}
+
+/* Alternating Left & Right Alignment */
+.step-card.right {
+    align-self: flex-end;
+    margin-right: 20px;
+}
+
+.step-card.left {
+    align-self: flex-start;
+    margin-left: 20px;
+}
+
+/* Timeline Dots */
+.step-dot {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: white;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Step Header (Step Number & Icon) */
+.step-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.step-number {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.step-header i {
+    color: #2563eb;
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+/* Step Title & Description */
+.step-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.step-description {
+    font-size: 1rem;
+}
+
+/* Custom Button Styles */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.custom-button {
+    background: #007bff;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 14px 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 123, 255, 0.4);
+}
+
+.custom-button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 123, 255, 0.6);
+}
+
+.custom-button span {
+    font-size: 1.5rem;
+}
+
+/* Mobile Responsive Fixes */
+@media (max-width: 768px) {
+    .step-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .timeline-line {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+/* Background and General Styles */
+.development-process {
+    background-color: #000;
+    background-image: repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.1) 0px,
+        rgba(255, 255, 255, 0.1) 2px,
+        transparent 2px,
+        transparent 50px
+    ),
+    repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.1) 0px,
+        rgba(255, 255, 255, 0.1) 2px,
+        transparent 2px,
+        transparent 50px
+    );
+    background-size: 50px 50px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Moving Black Bar Effect */
+.development-process::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 40%, rgba(255, 255, 255, 0.1) 50%, rgba(0, 0, 0, 0.8) 60%);
+    background-size: 200% 100%;
+    animation: moveBars 4s linear infinite;
+}
+
+@keyframes moveBars {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}

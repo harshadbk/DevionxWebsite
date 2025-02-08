@@ -1,0 +1,168 @@
+:root {
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2.5rem;
+  --color-text-primary: #1a202c;
+  --color-text-secondary: #4a5568;
+  --border-width: 5px;
+  --card-width: 100%;
+}
+
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.technologies-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.technologies-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.technologies-subheading {
+  font-size: 1.5rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.technologies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin-top: var(--spacing-lg);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.technology-card {
+  background-color: #ffffff;
+  padding: var(--spacing-lg);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 100%;
+  border-top: 5px solid transparent;
+  padding-top: 3rem;
+  transform: rotateX(0deg);
+  animation: cardMovement 1s ease-out infinite alternate;
+}
+
+@keyframes cardMovement {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+.technology-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.technology-card.frontend {
+  border-top-color: #3b82f6;
+}
+
+.technology-card.backend {
+  border-top-color: #10b981;
+}
+
+.technology-card.mobile {
+  border-top-color: #9333ea;
+}
+
+.technology-card.cloud {
+  border-top-color: #f59e0b;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+}
+
+.card-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.card-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: var(--spacing-md);
+}
+
+.card-list li {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-sm);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.card-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+}
+
+/* Responsive Design */
+
+/* For tablets (768px and above) */
+@media (min-width: 768px) {
+  .technologies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For large screens (1024px and above) */
+@media (min-width: 1024px) {
+  .technologies-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* For extra-large screens (1440px and above) */
+@media (min-width: 1440px) {
+  .technologies-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
