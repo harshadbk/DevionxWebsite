@@ -16,42 +16,42 @@ import "./services.css";
 export default function Services() {
   const services = [
     {
-      title: "Web Development",
+      title: "IT Staff Augmentation",
       description: "Develop robust, scalable, and highly efficient web applications.",
       color: "#4CAF50",
       icon: faCode,
       features: ["Responsive Design", "SEO Optimization", "Modern Tech Stack"],
     },
     {
-      title: "Mobile Development",
+      title: "Permanent Staffing",
       description: "Create robust and user-friendly mobile applications.",
       color: "#2196F3",
       icon: faMobileAlt,
       features: ["Cross-platform", "High Performance", "Custom Features"],
     },
     {
-      title: "UI/UX Design",
+      title: "Permanent Staffing",
       description: "Design visually appealing and user-centric interfaces.",
       color: "#FFC107",
       icon: faPalette,
       features: ["Wireframing", "Prototyping", "Usability Testing"],
     },
     {
-      title: "AI & ML Solutions",
+      title: "Project-Based Hiring",
       description: "AI and machine learning solutions for business growth.",
       color: "#673AB7",
       icon: faBrain,
       features: ["Predictive Analytics", "Data Analysis", "ML Models"],
     },
     {
-      title: "IT Consulting",
+      title: "Remote Staffing Solutions",
       description: "Technology consulting to drive business growth and innovation.",
       color: "#FF5722",
       icon: faCogs,
       features: ["Tech Strategy", "Digital Transformation", "Optimization"],
     },
     {
-      title: "Cloud Services",
+      title: "Non-IT Staffing",
       description: "Secure and scalable cloud solutions for modern businesses.",
       color: "#009688",
       icon: faCloud,

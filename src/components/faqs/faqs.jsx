@@ -3,20 +3,20 @@ import "./faqs.css";
 
 const data = [
   {
-    title: "What are the stages of software development?",
-    content: "The stages include planning, designing, development, testing, deployment, and maintenance. Each phase is crucial for ensuring the software meets user needs and performs well.",
+    title: "What is staff augmentation?",
+    content: "Staff augmentation is a flexible outsourcing strategy that enables businesses to hire skilled professionals on a temporary, contract, or long-term basis to meet specific project or operational needs.",
   },
   {
-    title: "Why is version control important in development?",
-    content: "Version control systems like Git allow developers to track changes, collaborate with teams, and manage code versions efficiently, preventing conflicts and lost work.",
+    title: "Which industries do you serve?",
+    content: "We provide staffing solutions across multiple industries, including IT & Software, Healthcare, BFSI, Manufacturing, E-commerce, Telecom, Logistics, Education, and more.",
   },
   {
-    title: "What is the difference between Agile and Waterfall methodologies?",
-    content: "Agile is an iterative, flexible methodology where development is done in small increments, while Waterfall is a linear, sequential approach where each phase must be completed before moving to the next.",
+    title: "What types of staffing services do you offer?",
+    content: "We offer IT and Non-IT Staff Augmentation, Permanent Hiring, Contract Staffing, Project-Based Hiring, RPO (Recruitment Process Outsourcing), and Remote Staffing Solutions.",
   },
   {
-    title: "What is continuous integration and continuous delivery (CI/CD)?",
-    content: "CI/CD refers to practices that automate code integration, testing, and delivery. Continuous integration involves merging code changes frequently, while continuous delivery ensures that code is always production-ready.",
+    title: "Do you only provide IT staff?",
+    content: "No. While we specialize in IT staff, we also provide professionals for non-IT roles such as HR, finance, administration, marketing, and operations.",
   },
   {
     title: "What is the role of testing in software development?",

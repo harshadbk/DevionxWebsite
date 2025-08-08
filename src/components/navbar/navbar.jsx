@@ -33,7 +33,10 @@ const Navbar = () => {
     <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="logo">
         <NavLink to="/" onClick={closeMenu}>
-          <img src={Logo} alt="Logo" />
+          {/* <img src={Logo} alt="Logo" /> */}
+          RSS
+          <br />
+          Logo
         </NavLink>
       </div>
       <nav>
@@ -61,16 +64,16 @@ const Navbar = () => {
                   <h3>Our Services</h3>
                   <ul>
                     <li>
-                      <NavLink to="/service1" onClick={closeMenu}>Web Development</NavLink>
+                      <NavLink to="/service1" onClick={closeMenu}>E-commerce & Retail</NavLink>
                     </li>
                     <li>
-                      <NavLink to="/service2" onClick={closeMenu}>Mobile Development</NavLink>
+                      <NavLink to="/service2" onClick={closeMenu}>Manufacturing & Engineering</NavLink>
                     </li>
                     <li>
-                      <NavLink to="/service3" onClick={closeMenu}>UI/UX Design</NavLink>
+                      <NavLink to="/service3" onClick={closeMenu}>Telecommunications</NavLink>
                     </li>
                     <li>
-                      <NavLink to="/service4" onClick={closeMenu}>AI & ML Solutions</NavLink>
+                      <NavLink to="/service4" onClick={closeMenu}>Education & E-Learning</NavLink>
                     </li>
                   </ul>
                 </div>
@@ -165,22 +168,22 @@ const Navbar = () => {
                   <ul className="inner-ul">
                     <NavLink to="/product1" onClick={closeMenu}>
                       <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                        LMS (Learning Management System)
+                        Talent Management Platform
                       </li>
                     </NavLink>
                     <NavLink to="/product2" onClick={closeMenu}>
                       <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                        ERP (Enterprise Resource Planning)
+                        Candidate Tracking System (CTS)
                       </li>
                     </NavLink>
                     <NavLink to="/product3" onClick={closeMenu}>
                       <li className="px-5 py-3 text-lg text-gray-800 border-b border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                        CRM (Customer Relationship Management)
+                        Skill Assessment Suite
                       </li>
                     </NavLink>
                     <NavLink to="/product4" onClick={closeMenu}>
                       <li className="px-5 py-3 text-lg text-gray-800 transition-all duration-300 ease-in-out hover:bg-gray-100 hover:text-blue-500 hover:translate-x-1">
-                        E-Commerce
+                        Compliance Management System
                       </li>
                     </NavLink>
                   </ul>

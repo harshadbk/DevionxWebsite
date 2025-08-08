@@ -98,7 +98,7 @@ const Footer = () => {
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-section">
-            <h3 className="footer-title">DevionX Technologies</h3>
+            <h3 className="footer-title">Rudram Software Solutions</h3>
             <p className="footer-description">
               Turning visions into reality with innovative tech and expert
               services.
@@ -164,13 +164,13 @@ const Footer = () => {
             <h4 className="footer-subtitle">Contact Us</h4>
             <ul className="footer-contact">
               <li>📍 123 Tech Street, Innovation City</li>
-              <li>✉️ info@devionx.com</li>
+              <li>✉️ info@RSS.com</li>
               <li>📞 9370613157 and 7666675306</li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2025 DevionX Technologies. All Rights Reserved.</p>
+          <p>&copy; 2025 Rudram Software Solutions Technologies. All Rights Reserved.</p>
         </div>
       </footer>
     </div>

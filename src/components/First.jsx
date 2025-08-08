@@ -11,7 +11,7 @@ const First = () => {
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  About DevionX
+                  About Rudram Software Solutions
                 </span>
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
@@ -24,18 +24,13 @@ const First = () => {
                 <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
                   <h3 className="text-2xl font-bold mb-4">Our Story</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Founded with a vision to revolutionize the digital landscape, DevionX Technologies has emerged as
-                    a leading force in software development and technological innovation. Our journey began with a
-                    commitment to delivering exceptional value through cutting-edge solutions.
-                  </p>
+                    To be the most trusted global partner in delivering exceptional talent and innovative workforce solutions, empowering businesses to achieve their goals and professionals to realize their potential. </p>
                 </div>
 
                 <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
                   <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    To empower businesses with innovative digital solutions that drive growth, efficiency, and success
-                    in the modern technological landscape. We strive to be at the forefront of technological
-                    advancement, particularly in AI and ML applications.
+                 Our mission is to connect the right talent with the right opportunities by combining industry expertise, advanced technology, and a personalized approach. We aim to provide flexible, scalable, and high-quality staffing solutions that drive business growth, foster innovation, and create long-term value for our clients, partners, and workforce
                   </p>
                 </div>
 
